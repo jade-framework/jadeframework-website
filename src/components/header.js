@@ -1,47 +1,30 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import ImageLogo from "./image-logo"
+
+import styled from "styled-components"
+
+const Banner = styled.header`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const Heading = styled.h1`
+  font-size: 5rem;
+`
+
+const Subheading = styled.h2`
+  text-align: center;
+`
 
 const Header = ({ siteTitle }) => (
-  <header>
-    <nav>
-      <ul>
-        <li>
-          {" "}
-          <a href="#!">
-            {" "}
-            <img
-              src="../images/jade-logo.png"
-              alt="Jade Logo"
-              class="bp-mark"
-            />
-          </a>{" "}
-        </li>
-        <li>
-          {" "}
-          <a href="#!" class="active-link link-with-padding">
-            {" "}
-            Case Study{" "}
-          </a>{" "}
-        </li>
-        <li>
-          {" "}
-          <a href="#!" class="link-with-padding">
-            {" "}
-            Our Team{" "}
-          </a>{" "}
-        </li>
-        <li>
-          {" "}
-          <a href="#!">
-            {" "}
-            <i class="fab fa-github"></i>{" "}
-          </a>{" "}
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <Banner>
+    <Heading>Jade</Heading>
+    <Subheading>A deployment environment for JAMstack applications.</Subheading>
+  </Banner>
 )
 
 Header.propTypes = {
