@@ -1,7 +1,7 @@
 import React from "react"
 import Section from "./section"
 
-const SectionOne = ({ title, id }) => (
+const SectionThree = ({ title, id }) => (
   <>
     <Section id={id} sectionTitle="Edmond's Stuff">
       <p>Edmond's stuff goes here</p>
@@ -18,4 +18,4 @@ const SectionOne = ({ title, id }) => (
   </>
 )
 
-export default SectionOne
+export default SectionThree

@@ -25,12 +25,12 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Waypoint onEnter={handleWaypointEnter} onLeave={handleWaypointLeave}>
-        <div class="banner case-study">
+        <div className="banner case-study">
           <h1>Case Study</h1>
         </div>
       </Waypoint>
       {stickyMenu && <ContentMenu sections={sections} />}
-      <article class="case-study">
+      <article className="case-study">
         <SectionOne id={sections[0].id} title={sections[0].title} />
         <SectionTwo id={sections[1].id} title={sections[1].title} />
         <SectionThree id={sections[2].id} title={sections[2].title} />

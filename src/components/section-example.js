@@ -28,7 +28,7 @@ const SectionOne = () => (
     </Section>
     <Section sectionTitle="Jade Core App">
       <p>The core app...</p>
-      <ul class="bullets">
+      <ul className="bullets">
         <li>Point 1</li>
         <li>Point 2</li>
         <li>Point 3</li>
@@ -50,8 +50,8 @@ const SectionOne = () => (
         Sub Subtitle 2-1
       </h4>
       <p>
-        To make it <span class="emphasize">easy</span> for frontend developers
-        to...jade.
+        To make it <span className="emphasize">easy</span> for frontend
+        developers to...jade.
       </p>
       <h5 id="h5-2-1" data-title="h5 2-1">
         Sub Sub Subtitle 2-1
