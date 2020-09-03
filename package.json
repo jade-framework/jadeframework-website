@@ -1,5 +1,5 @@
 {
-  "name": "jadeframework.dev",
+  "name": "jadeframework-website",
   "description": "Jade Framework",
   "version": "1.0.0",
   "author": "Edmond Tam, Jeremy Crichton, Krunal Patel",
@@ -38,6 +38,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jade-framework/jadeframework.dev"
+    "url": "https://github.com/jade-framework/jadeframework-website"
   }
 }
