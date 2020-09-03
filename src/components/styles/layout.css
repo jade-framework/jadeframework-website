@@ -390,7 +390,7 @@ article.case-study code {
   word-wrap: break-word;
 }
 
-aside {
+/* aside {
   position: fixed;
   width: 300px;
   opacity: 0;
@@ -431,7 +431,7 @@ aside .visible > ul > li {
 
 #progress li.active > a {
   font-weight: bold;
-}
+} */
 
 .emphasize {
   font-style: italic;
