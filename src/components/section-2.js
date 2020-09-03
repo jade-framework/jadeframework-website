@@ -1,5 +1,6 @@
 import React from "react"
 import Section from "./section"
+import Image from "./image"
 
 const SectionOne = ({ title, id }) => (
   <>
@@ -14,6 +15,7 @@ const SectionOne = ({ title, id }) => (
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
+      <Image imageName="2-provisioning-services.png" />
     </Section>
   </>
 )
