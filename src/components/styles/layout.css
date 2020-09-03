@@ -141,18 +141,18 @@ nav .bp-mark:hover {
   padding: 5%;
 }
 
-.banner h1 {
+/* .banner h1 {
   color: white;
   font-size: 5.725rem;
   text-align: center;
-}
+} */
 
-.banner.case-study {
+/* .banner.case-study {
   background-color: var(--color-jade);
   max-height: 500px;
   margin-bottom: 150px;
   z-index: 1;
-}
+} */
 
 .banner.case-study p {
   color: white;
@@ -547,9 +547,9 @@ article.case-study .todos li {
     font-size: 2rem;
   }
 
-  .banner {
+  /* .banner {
     padding: 30px 15px;
-  }
+  } */
 
   .banner h1 {
     font-size: 3rem;

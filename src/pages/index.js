@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Waypoint } from "react-waypoint"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +9,22 @@ import SectionOne from "../components/section-1"
 import SectionTwo from "../components/section-2"
 import SectionThree from "../components/section-3"
 import SectionExample from "../components/section-example"
+
+const Banner = styled.div`
+  background-color: #00a86b;
+  padding: 60px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin-bottom: 200px;
+  z-index: 1;
+`
+
+const BannerHeading = styled.h1`
+  color: white;
+  font-size: 5.725rem;
+  text-align: center;
+`
 
 const IndexPage = () => {
   const [stickyMenu, setStickyMenu] = useState(false)
@@ -24,11 +41,14 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Waypoint onEnter={handleWaypointEnter} onLeave={handleWaypointLeave}>
-        <div className="banner case-study">
-          <h1>Case Study</h1>
-        </div>
-      </Waypoint>
+      <Waypoint
+        onEnter={handleWaypointEnter}
+        onLeave={handleWaypointLeave}
+      ></Waypoint>
+      <Banner className="banner case-study">
+        <BannerHeading>Case Study</BannerHeading>
+      </Banner>
+
       {stickyMenu && <ContentMenu sections={sections} />}
       <article className="case-study">
         <SectionOne id={sections[0].id} title={sections[0].title} />

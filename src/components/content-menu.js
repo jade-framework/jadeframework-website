@@ -36,7 +36,7 @@ const ContentMenu = ({ sections }) => {
               to={section.id}
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={-270}
               duration={500}
             >
               {section.title}
