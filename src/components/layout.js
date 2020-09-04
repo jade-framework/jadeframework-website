@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       <footer>
         © {new Date().getFullYear()}, Deployed with
         {` `}
-        <a href="#!">Jade</a>
+        <a href="https://jadeframework.dev">Jade</a>
       </footer>
     </>
   )
