@@ -1,8 +1,21 @@
 import React, { useEffect } from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "./styles/carousel.css"
+
 import Section from "./section"
 import Image from "./image"
 
 const SectionTwo = ({ title, id }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
+
   return (
     <>
       <Section id={id} sectionTitle="Jer's Stuff">
@@ -18,6 +31,14 @@ const SectionTwo = ({ title, id }) => {
         </p>
         <Image imageName="2-provisioning-services.png" />
         <Image imageName="2-workflow-2.png" />
+        <Slider {...settings}>
+          <div>
+            <Image imageName="2-provisioning-services.png" />
+          </div>
+          <div>
+            <Image imageName="2-workflow-2.png" />
+          </div>
+        </Slider>
       </Section>
     </>
   )

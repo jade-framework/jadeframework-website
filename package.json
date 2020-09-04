@@ -1,5 +1,5 @@
 {
-  "name": "jadeframework-website",
+  "name": "jadeframework.dev",
   "description": "Jade Framework",
   "version": "1.0.0",
   "author": "Edmond Tam, Jeremy Crichton, Krunal Patel",
@@ -17,7 +17,9 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-scroll": "^1.8.1",
+    "react-slick": "^0.27.10",
     "react-waypoint": "^9.0.3",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {

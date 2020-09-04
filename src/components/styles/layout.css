@@ -301,11 +301,11 @@ article.case-study h5 {
   color: var(--color-jade);
 }
 
-article.case-study img {
+/* article.case-study img {
   display: block;
   margin: 2rem auto;
   max-width: 100%;
-}
+} */
 
 article.case-study p {
   line-height: 1.4rem;
@@ -320,7 +320,13 @@ article.case-study ol {
   margin-left: 3rem;
 }
 
-article.case-study li {
+/* article.case-study li {
+  line-height: 1.4rem;
+  padding-left: 1ch;
+  text-indent: -2ch;
+} */
+
+article.case-study li.list-item {
   line-height: 1.4rem;
   padding-left: 1ch;
   text-indent: -2ch;

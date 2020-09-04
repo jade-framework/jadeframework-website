@@ -29,9 +29,9 @@ const SectionOne = () => (
     <Section sectionTitle="Jade Core App">
       <p>The core app...</p>
       <ul className="bullets">
-        <li>Point 1</li>
-        <li>Point 2</li>
-        <li>Point 3</li>
+        <li className="list-item">Point 1</li>
+        <li className="list-item">Point 2</li>
+        <li className="list-item">Point 3</li>
       </ul>
       <p>In the following sections, we will explore how we built a system...</p>
       <h3 id="subtitle-2-1" data-title="Subtitle 2-1">
