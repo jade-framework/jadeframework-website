@@ -24,6 +24,8 @@ const Header = ({ siteTitle }) => (
   <Banner>
     <Heading>Jade</Heading>
     <Subheading>A deployment environment for JAMstack applications.</Subheading>
+    <br />
+    <Subheading>Coming soon...</Subheading>
   </Banner>
 )
 
