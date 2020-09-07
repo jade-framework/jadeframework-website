@@ -12,17 +12,17 @@ import SectionExample from "../components/section-example"
 
 const Banner = styled.div`
   background-color: #00a86b;
-  padding: 60px 0;
+  padding: 10px 0;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
   z-index: 1;
 `
 
 const BannerHeading = styled.h1`
   color: white;
-  font-size: 5.725rem;
+  font-size: 1.5rem;
   text-align: center;
 `
 
@@ -46,7 +46,7 @@ const CaseStudyPage = () => {
         onLeave={handleWaypointLeave}
       ></Waypoint>
       <Banner className="banner case-study">
-        <BannerHeading>Case Study</BannerHeading>
+        <BannerHeading>Jade Case Study</BannerHeading>
       </Banner>
 
       {stickyMenu && <ContentMenu sections={sections} />}
@@ -54,7 +54,7 @@ const CaseStudyPage = () => {
         <SectionOne id={sections[0].id} title={sections[0].title} />
         <SectionTwo id={sections[1].id} title={sections[1].title} />
         <SectionThree id={sections[2].id} title={sections[2].title} />
-        <SectionExample />
+        {/* <SectionExample /> */}
       </article>
     </Layout>
   )
