@@ -5,27 +5,24 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ContentMenu from "../components/content-menu"
+import SectionAbstract from "../components/section-abstract"
 import SectionOne from "../components/section-1"
 import SectionTwo from "../components/section-2"
 import SectionThree from "../components/section-3"
 import SectionExample from "../components/section-example"
 
 const Container = styled.div`
-  margin-left: 12rem;
-
   @media (max-width: 800px) {
     margin-left: 0;
   }
 `
 
 const ArticleContainer = styled.div`
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 `
 
 const Article = styled.article`
-  padding: 0 4rem;
-
   @media (max-width: 800px) {
     max-width: 100%;
     margin-left: 2rem;
@@ -118,6 +115,7 @@ const CaseStudyPage = () => {
   const handleWaypointLeave = () => setStickyMenu(true)
 
   const sections = [
+    { id: "section-abstract", title: "Abstract" },
     { id: "section-1", title: "JAMstack" },
     { id: "section-2", title: "Jade Core" },
     { id: "section-3", title: "Evolution of Jade" },
@@ -138,9 +136,10 @@ const CaseStudyPage = () => {
       <Container>
         <ArticleContainer>
           <Article className="case-study">
-            <SectionOne id={sections[0].id} title={sections[0].title} />
-            <SectionTwo id={sections[1].id} title={sections[1].title} />
-            <SectionThree id={sections[2].id} title={sections[2].title} />
+            <SectionAbstract id={sections[0].id} title={sections[0].title} />
+            <SectionOne id={sections[1].id} title={sections[1].title} />
+            <SectionTwo id={sections[2].id} title={sections[2].title} />
+            <SectionThree id={sections[3].id} title={sections[3].title} />
             {/* <SectionExample /> */}
           </Article>
         </ArticleContainer>
