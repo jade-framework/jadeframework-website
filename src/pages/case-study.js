@@ -13,16 +13,14 @@ import SectionExample from "../components/section-example"
 const Article = styled.article`
   margin-left: 20%;
   padding: 0 25px;
-  max-width: 60%;
-  width: 60%;
-  margin-bottom: 10%;
+  max-width: 75%;
   & > * {
     margin: 0.8rem 0;
   }
   @media (max-width: 800px) {
-    margin-left: 10%;
-    max-width: 80%;
-    width: 80%;
+    max-width: 100%;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   & h2 {
     font-size: 2.75rem;

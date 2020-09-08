@@ -9,6 +9,9 @@ const Aside = styled.aside`
   width: 300px;
   opacity: 1;
   transition: 0.2s ease-in-out;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 const List = styled.ul`
