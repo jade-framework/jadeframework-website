@@ -1,5 +1,7 @@
 import React from "react"
 import Section from "./section"
+import Image from "./image"
+import Slider from "react-slick"
 
 const createAnchor = (title, link) => (
   <a href={link} target="_blank" rel="noreferrer">
@@ -9,6 +11,20 @@ const createAnchor = (title, link) => (
 
 const SectionOne = ({ title, id }) => {
   const sectionNumber = 3
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 4000,
+    customPaging: (slick, index) => {
+      return index + 1
+    },
+    dots: true,
+    focusOnSelect: true,
+    focusOnChange: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
   return (
     <>
       <Section id={id} sectionTitle={`${sectionNumber}. What is the JAMstack`}>
@@ -39,7 +55,7 @@ const SectionOne = ({ title, id }) => {
           browser since content does not have to be generated on the
           client-side.
         </p>
-        <p style={{ color: "blue" }}>[diagram: static website architecture]</p>
+        <Image imageAlt="static website architecture" imageName="svgs/4.svg" />
         <p>
           However, the simple nature of this architecture results in limited
           functionality. Only static content can be served to users with little
@@ -58,9 +74,7 @@ const SectionOne = ({ title, id }) => {
           together are responsible for two main tasks: <b>managing data</b> and
           <b>other business logic</b>.
         </p>
-        <p style={{ color: "blue" }}>
-          [diagram: standard web app architecture]
-        </p>
+        <Image imageAlt="web app architecture" imageName="svgs/5.svg" />
         <p>
           This architecture, along with modern browser capabilities, allows for
           highly dynamic and interactive content to be served to users.
@@ -85,9 +99,17 @@ const SectionOne = ({ title, id }) => {
           files the final page will be rendered for the user to view. As such,
           the web page is always built following each request from the client.
         </p>
-        <p style={{ color: "blue" }}>
-          [carousel: using servers to build standard web apps static content]
-        </p>
+        <Slider {...settings}>
+          <div>
+            <Image imageAlt="initial request" imageName="svgs/6.svg" />
+          </div>
+          <div>
+            <Image
+              imageAlt="additional request for other static assets"
+              imageName="svgs/7.svg"
+            />
+          </div>
+        </Slider>
         <p>
           The multiple requests made in order to receive the HTML file and all
           supporting/referenced assets can add to network latency. Moreover, In
@@ -111,9 +133,7 @@ const SectionOne = ({ title, id }) => {
           processed and populated by the application server. This results in a
           delay loading the pages.
         </p>
-        <p style={{ color: "blue" }}>
-          [image: using servers to build standard web apps dynamic content]
-        </p>
+        <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
         <p>
           To counter the load delay, developers can pre-build pages in order to
           receive the same benefits as server-side rendering.
@@ -142,9 +162,7 @@ const SectionOne = ({ title, id }) => {
             reducing load and improving scalability
           </li>
         </ul>
-        <p style={{ color: "blue" }}>
-          [diagram: can we pre-build a page instead]
-        </p>
+        <Image imageAlt="pre-building pages" imageName="svgs/9.svg" />
         <h4
           id={`subtitle-${sectionNumber}-2-4`}
           data-title={`Subtitle ${sectionNumber}-2-4`}
@@ -183,9 +201,7 @@ const SectionOne = ({ title, id }) => {
           allows files to be pre-built as the data has already been
           incorporated, allowing content to be delivered faster to end users.
         </p>
-        <p style={{ color: "blue" }}>
-          [carousel: SSG [or should we just use the full diagram]]
-        </p>
+        <Image imageAlt="SSGs" imageName="svgs/10.svg" />
         <h3
           id={`subtitle-${sectionNumber}-3`}
           data-title={`Subtitle ${sectionNumber}-3`}
@@ -196,7 +212,7 @@ const SectionOne = ({ title, id }) => {
           id={`subtitle-${sectionNumber}-3-1`}
           data-title={`Subtitle ${sectionNumber}-3-1`}
         >
-          {`${sectionNumber}.3.1 Takinga advantage of pre-built pages`}
+          {`${sectionNumber}.3.1 Taking advantage of pre-built pages`}
         </h4>
         <p>
           Pre-building web pages can actually open up changes in the standard
@@ -207,9 +223,6 @@ const SectionOne = ({ title, id }) => {
           to serving static files from CDNs over web servers, which are
           discussed in section 3.5.1.
         </p>
-        <p style={{ color: "blue" }}>
-          [diagram: architecture change with pre-built files]
-        </p>
         <p>
           If all static assets can be served from a CDN then it is possible to
           substitute the web server out of the standard architecture. Requests
@@ -217,9 +230,10 @@ const SectionOne = ({ title, id }) => {
           server from the client. The architecture now involves a CDN, an
           application server, and a database.
         </p>
-        <p style={{ color: "blue" }}>
-          [diagram: client, cdn, app server, database architecture]
-        </p>
+        <Image
+          imageAlt="replacing web server with CDN"
+          imageName="svgs/12.svg"
+        />
         <h4
           id={`subtitle-${sectionNumber}-3-2`}
           data-title={`Subtitle ${sectionNumber}-3-2`}
@@ -239,9 +253,10 @@ const SectionOne = ({ title, id }) => {
             Business logic can be handled using serverless functions
           </li>
         </ul>
-        <p style={{ color: "blue" }}>
-          [diagram: client, cdn, api/FaaS architecture]
-        </p>
+        <Image
+          imageAlt="Replacing app server and database with APIs and FaaS"
+          imageName="svgs/13.svg"
+        />
         <p>
           In this serverless model, the client is now responsible for dynamic
           functionality, instead of the application server as before, and
@@ -253,7 +268,7 @@ const SectionOne = ({ title, id }) => {
           By making this transition, we have moved into a web app architecture
           commonly known as the JAMstack architecture.
         </p>
-        <p style={{ color: "blue" }}>[diagram: jamstack architecture]</p>
+        <Image imageAlt="JAMstack architecture" imageName="svgs/15.svg" />
         <h3
           id={`subtitle-${sectionNumber}-4`}
           data-title={`Subtitle ${sectionNumber}-4`}
@@ -342,10 +357,10 @@ const SectionOne = ({ title, id }) => {
           development can carry on without concern for the maintenance of those
           servers.
         </p>
-        <p style={{ color: "blue" }}>
-          [diagram: side by side images of standard web app & jamstack
-          architecture]
-        </p>
+        <Image
+          imageAlt="web app architecture & jamstack architecture"
+          imageName="svgs/16.svg"
+        />
         <h4
           id={`subtitle-${sectionNumber}-4-3`}
           data-title={`Subtitle ${sectionNumber}-4-3`}
@@ -379,9 +394,10 @@ const SectionOne = ({ title, id }) => {
         >
           {`${sectionNumber}.5.1 Serving static content from a CDN`}
         </h4>
-        <p style={{ color: "blue" }}>
-          [diagram: client → cdn focus with api/faas greyed out]
-        </p>
+        <Image
+          imageAlt="serving static content from CDNs"
+          imageName="svgs/17.svg"
+        />
         <p>
           All JAMstack sites serve static content directly from a CDN, with as
           much of the site pre-built before being uploaded to the CDN.
@@ -422,15 +438,13 @@ const SectionOne = ({ title, id }) => {
         >
           {`${sectionNumber}.5.2 Implementing dynamic functionality`}
         </h4>
-        <p style={{ color: "blue" }}>
-          [diagram: client → api/faas with cdn greyed out]
-        </p>
         <p>
           In standard web app architectures, application servers are responsible
           for managing data and handling other business logic. Data management
           can be abstracted into APIs, allowing the client to be the coordinator
           of such data.
         </p>
+        <Image imageAlt="APIs in JAMstack" imageName="svgs/18.svg" />
         <p>
           A developer can use first-party and/or third-party APIs. A first-party
           API allows the developer to control all aspects of the API lifecycle
@@ -443,6 +457,7 @@ const SectionOne = ({ title, id }) => {
           functionality already created by others, allowing the developer to
           focus on the core needs of their web app.
         </p>
+        <Image imageAlt="Serverless functions" imageName="svgs/19.svg" />
         <p>
           Serverless functions, or Functions as a Service (FaaS), can also be
           used in place of servers to manage other business logic. FaaS is
@@ -452,20 +467,6 @@ const SectionOne = ({ title, id }) => {
           and not from the client-side. Some common use cases for serverless
           functions are user authentication, form validation and submission, as
           well as triggering events.
-        </p>
-        <p>
-          Serverless functions, or Functions as a Service (FaaS), can also be
-          used in place of servers to manage other business logic. FaaS is
-          useful when APIs and frontend logic alone are not capable of replacing
-          all business logic once handled by the application server.
-          Additionally, some tasks need to be performed from a secure location
-          and not from the client-side. Some common use cases for serverless
-          functions are user authentication, form validation and submission, as
-          well as triggering events.
-        </p>
-        <p style={{ color: "blue" }}>
-          [carousel: jamstack architecture with dynamic functionality → expanded
-          api box & faas]
         </p>
         <h4
           id={`subtitle-${sectionNumber}-5-3`}
@@ -489,7 +490,10 @@ const SectionOne = ({ title, id }) => {
           Launching an application that follows the JAMstack architecture, at
           its most simple, takes only 3 steps to get up and running.
         </p>
-        <p style={{ color: "blue" }}>[screenshot of 3 step workflow]</p>
+        <Image
+          imageAlt="steps to deploy a JAMstack site"
+          imageName="svgs/21.svg"
+        />
         <p>
           With this, JAMstack developers can serve their sites to their end
           users. However, these steps are best suited for JAMstack sites that do
@@ -515,8 +519,7 @@ const SectionOne = ({ title, id }) => {
           <li className="list-item">Automic deploys</li>
           <li className="list-item">Instant CDN invalidation</li>
         </ul>
-        <p style={{ color: "blue" }}>[best practices]</p>
-        <p style={{ color: "blue" }}>[carosuel of jamstack workflow]</p>
+        <Image imageAlt="JAMstack best practices" imageName="svgs/22.svg" />
         <p>
           All source code should live on a Git repository. The developer should
           be able to see the version history of the code. In addition, version
@@ -548,6 +551,29 @@ const SectionOne = ({ title, id }) => {
           FaaS or a server will invalidate the CDN and make it point at new
           files rather than old content.
         </p>
+        <Slider {...settings}>
+          <div>
+            <Image imageAlt="jamstack workflow" imageName="svgs/23.svg" />
+          </div>
+          <div>
+            <Image imageAlt="version control" imageName="svgs/24.svg" />
+          </div>
+          <div>
+            <Image imageAlt="automated builds" imageName="svgs/25.svg" />
+          </div>
+          <div>
+            <Image imageAlt="atomic deploys" imageName="svgs/26.svg" />
+          </div>
+          <div>
+            <Image imageAlt="entire site from CDN" imageName="svgs/27.svg" />
+          </div>
+          <div>
+            <Image
+              imageAlt="instant cdn invalidation"
+              imageName="svgs/28.svg"
+            />
+          </div>
+        </Slider>
       </Section>
     </>
   )
