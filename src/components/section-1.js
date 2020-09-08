@@ -4,7 +4,6 @@ import Image from "./image"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import "./styles/carousel.css"
 
 const createAnchor = (title, link) => (
   <a href={link} target="_blank" rel="noreferrer">
@@ -480,13 +479,13 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.5.3 Use case for the JAMstack`}
         </h4>
         <p>
-          The JAMstack architecture is not necessarily the ideal architecture for 
-          all websites. Certain functionality, such as real time chat, is not 
-          suited for a JAMstack app. Similarly, use cases such as websites for 
-          internal teams are not likely to benefit from using a CDN and serverless 
-          model. The JAMstack architecture works best for sites which can source 
-          data at build time in order to create pre-built files, therefore leading 
-          to many of the advantages discussed.
+          The JAMstack architecture is not necessarily the ideal architecture
+          for all websites. Certain functionality, such as real time chat, is
+          not suited for a JAMstack app. Similarly, use cases such as websites
+          for internal teams are not likely to benefit from using a CDN and
+          serverless model. The JAMstack architecture works best for sites which
+          can source data at build time in order to create pre-built files,
+          therefore leading to many of the advantages discussed.
         </p>
         <h3
           id={`subtitle-${sectionNumber}-6`}

@@ -10,19 +10,22 @@ import SectionTwo from "../components/section-2"
 import SectionThree from "../components/section-3"
 import SectionExample from "../components/section-example"
 
-const Article = styled.article`
-  margin-left: 20%;
-  padding: 0 25px;
-  max-width: 60%;
-  width: 60%;
-  margin-bottom: 10%;
-  & > * {
-    margin: 0.8rem 0;
-  }
+const Container = styled.div`
+  margin-left: 12rem;
+  max-width: 1400px;
   @media (max-width: 800px) {
-    margin-left: 10%;
-    max-width: 80%;
-    width: 80%;
+    margin-left: 0;
+  }
+`
+
+const Article = styled.article`
+  padding: 0 4rem;
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0;
   }
   & h2 {
     font-size: 2.75rem;
@@ -127,12 +130,14 @@ const CaseStudyPage = () => {
       </Banner>
 
       {stickyMenu && <ContentMenu sections={sections} />}
-      <Article className="case-study">
-        {/* <SectionOne id={sections[0].id} title={sections[0].title} /> */}
-        <SectionTwo id={sections[1].id} title={sections[1].title} />
-        {/* <SectionThree id={sections[2].id} title={sections[2].title} /> */}
-        {/* <SectionExample /> */}
-      </Article>
+      <Container>
+        <Article className="case-study">
+          {/* <SectionOne id={sections[0].id} title={sections[0].title} /> */}
+          <SectionTwo id={sections[1].id} title={sections[1].title} />
+          {/* <SectionThree id={sections[2].id} title={sections[2].title} /> */}
+          {/* <SectionExample /> */}
+        </Article>
+      </Container>
     </Layout>
   )
 }
