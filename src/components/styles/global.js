@@ -88,6 +88,17 @@ const GlobalStyles = createGlobalStyle`
     font-style: italic;
     font-weight: bold;
   }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: #00a86b;
+  }
+
+  ul.slick-dots {
+    position: relative;
+    margin: 0.5rem auto 1rem;
+    bottom: 0px;
+  }
 `
 
 export default GlobalStyles
