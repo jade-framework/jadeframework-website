@@ -33,7 +33,7 @@ const SectionTwo = ({ title, id }) => {
           functionality, a developer would need to provision a minimum of 5
           services as outlined below.
         </p>
-        {/* <Image imageName="2-provisioning-services.png" /> */}
+
         <Image imageName="svgs/30.svg" imageAlt="Provisioning Services" />
         <p>
           Each service requires multiple steps to provision and must
@@ -82,6 +82,7 @@ const SectionTwo = ({ title, id }) => {
         <p>
           JaaS providers manage the build and deploy process for developers. 
         </p>
+        <Image imageName="svgs/34.svg" imageAlt="Provisioning Services" />
         <p>
           In utilizing a JaaS, the developer only needs to concern themselves
           with updating their source code and committing the update to a git
@@ -95,6 +96,7 @@ const SectionTwo = ({ title, id }) => {
           the problems outlined above. Below, we outline four of the most
           prominent providers in the industry:
         </p>
+        <Image imageName="svgs/36.svg" imageAlt="Provisioning Services" />
         <p>
           Every one of the above providers provision underlying architecture and
           handle the build and deployment processes for developers. They also
@@ -130,11 +132,12 @@ const SectionTwo = ({ title, id }) => {
             specific needs
           </li>
         </ul>
-        <Section id={id} sectionTitle="Jade Core">
+        <Section id={id} sectionTitle="5. Jade Core">
           <p>
             At its core, Jade connects public GitHub repositories and AWS
             services.
           </p>
+          <Image imageName="svgs/39.svg" imageAlt="Provisioning Services" />
           <p>
             Upon initialization, Jade provisions the above 6 underlying AWS
             services. It configures these underlying AWS services, sets
@@ -149,45 +152,68 @@ const SectionTwo = ({ title, id }) => {
             because of their prominence in the industry.
           </p>
           <h3>5.1 Build stage</h3>
+          <h4>5.1.1 Overview of build stage architecture</h4>
           <p>Jade utilizes an AWS EC2 instance to handle the build process.</p>
+          <Image imageName="svgs/42.svg" imageAlt="Provisioning Services" />
           <p>The components or the EC2 instance include:</p>
-          <ul>
-            <li>
+          <ul className="bullets">
+            <li className="list-item">
               Configuration related to the user and the provisioned AWS services
             </li>
-            <li>
+            <li className="list-item">
               An Nginx web server set up as a reverse proxy to handle incoming
               requests
             </li>
-            <li>
+            <li className="list-item">
               A node application that contains the logic to handle the build
               process
             </li>
-            <li>
+            <li className="list-item">
               A copy of the most recent source code from the project’s git
               repository as well as a copy of the most recent build of the
               application
             </li>
           </ul>
           <p>The components of the Node application running on EC2 include:</p>
-          <ul>
-            <li>
+          <ul className="bullets">
+            <li className="list-item">
               Server.js, which handles routing of incoming requests from Nginx
             </li>
-            <li>
+            <li className="list-item">
               Build.js, which gathers the required resources and builds the
               application
             </li>
-            <li>Logger.js, which logs the results of each build</li>
-            <li>
+            <li className="list-item">
+              Logger.js, which logs the results of each build
+            </li>
+            <li className="list-item">
               Update.js, which sends the built application on to the deployment
               process
             </li>
           </ul>
+          <h4>5.1.2 Github webhook</h4>
           <p>
             The slideshow below details the process from the developer pushing a
             commit to GitHub to the build process being initiated.
           </p>
+          <Slider {...settings}>
+            <div>
+              <Image imageName="svgs/44.svg" imageAlt="Build Process 1" />
+            </div>
+            <div>
+              <Image imageName="svgs/45.svg" imageAlt="Build Process 2" />
+            </div>
+            <div>
+              <Image imageName="svgs/46.svg" imageAlt="Build Process 3" />
+            </div>
+            <div>
+              <Image imageName="svgs/47.svg" imageAlt="Build Process 4" />
+            </div>
+            <div>
+              <Image imageName="svgs/48.svg" imageAlt="Build Process 5" />
+            </div>
+          </Slider>
+          <h4>5.1.3 Examining the build process</h4>
           <p>
             Once the build process has been initiated, Jade uses the user
             configuration stored on EC2, which holds information including the
@@ -206,6 +232,7 @@ const SectionTwo = ({ title, id }) => {
             configuration by the developer, but Jade is built to support these 2
             out of the box.
           </p>
+          <Image imageName="svgs/49.svg" imageAlt="Gatsby Build Deep Dive" />
           <p>
             Jade passes the source code to Gatsby, parses it, and then reaches
             out to Contentful if the source code indicates the project is
@@ -218,8 +245,11 @@ const SectionTwo = ({ title, id }) => {
             Once the application is built, the application is sent to the deploy
             process.
           </p>
+          <Image imageName="svgs/50.svg" imageAlt="Deploy Process 1" />
           <h3>5.2 Deploy stage</h3>
+          <h4>5.2.1 Overview of deploy stage architecture</h4>
           <p>The key components involved in deployment are as follows:</p>
+          <Image imageName="svgs/51.svg" imageAlt="Deploy Process 1" />
           <p>
             An S3 bucket hosts the live build of the application. The bucket has
             an event associated with it such that whenever a new build is
@@ -228,6 +258,8 @@ const SectionTwo = ({ title, id }) => {
             CloudFront. This ensures that on every build, the CDN serves only
             the latest built files to end users.
           </p>
+          <h4>5.2.2 CDN invalidation</h4>
+          <Image imageName="svgs/52.svg" imageAlt="Deploy Process 1" />
           <p>
             CDN invalidation is an important issue that we ran into when
             building Jade. Assets distributed via AWS CloudFront expire in 24
@@ -247,7 +279,7 @@ const SectionTwo = ({ title, id }) => {
             files.
           </p>
           <p>
-            o overcome the invalidation problem, we considered sending
+            To overcome the invalidation problem, we considered sending
             invalidations for all files on CloudFront. However, we learned that
             AWS recommends minimizing the number of CDN invalidations made, as
             this is a costly operation and only 1,000 invalidations are provided
@@ -256,9 +288,10 @@ const SectionTwo = ({ title, id }) => {
             this limit quickly.
           </p>
           <p>
-            We decided to use the characteristics of SSGs in implementing the
-            Jade approach to CDN invalidation:
+            We decided to use these characteristics in implementing CDN
+            invalidations:
           </p>
+          <Image imageName="svgs/54.svg" imageAlt="Deploy Process 1" />
           <p>
             As seen in the code snippet, Jade invalidates only one file every
             time a new build is detected: the `index.html` file. This is because
@@ -267,18 +300,12 @@ const SectionTwo = ({ title, id }) => {
             files from S3 when a new version is uploaded, ensuring that the user
             is always presented with the most recent version of the application.
           </p>
+          <Image imageName="svgs/55.svg" imageAlt="Deploy Process 1" />
           <p>
-            With the deploy stage, the core functionality of Jade is complete.
+            With the deploy stage complete, this represents the core
+            functionality of Jade.
           </p>
         </Section>
-        <Slider {...settings}>
-          <div>
-            <Image imageName="2-provisioning-services.png" />
-          </div>
-          <div>
-            <Image imageName="2-workflow-2.png" />
-          </div>
-        </Slider>
       </Section>
     </>
   )
