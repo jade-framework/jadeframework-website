@@ -12,10 +12,15 @@ import SectionExample from "../components/section-example"
 
 const Container = styled.div`
   margin-left: 12rem;
-  max-width: 1400px;
+
   @media (max-width: 800px) {
     margin-left: 0;
   }
+`
+
+const ArticleContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
 `
 
 const Article = styled.article`
@@ -86,7 +91,7 @@ const Article = styled.article`
   & img {
     display: block;
     margin: 0.5rem auto 0.5rem;
-    width: 100%;
+    max-width: 100%;
   }
 `
 
@@ -131,12 +136,14 @@ const CaseStudyPage = () => {
 
       {stickyMenu && <ContentMenu sections={sections} />}
       <Container>
-        <Article className="case-study">
-          {/* <SectionOne id={sections[0].id} title={sections[0].title} /> */}
-          <SectionTwo id={sections[1].id} title={sections[1].title} />
-          <SectionThree id={sections[2].id} title={sections[2].title} />
-          {/* <SectionExample /> */}
-        </Article>
+        <ArticleContainer>
+          <Article className="case-study">
+            <SectionOne id={sections[0].id} title={sections[0].title} />
+            <SectionTwo id={sections[1].id} title={sections[1].title} />
+            <SectionThree id={sections[2].id} title={sections[2].title} />
+            {/* <SectionExample /> */}
+          </Article>
+        </ArticleContainer>
       </Container>
     </Layout>
   )
