@@ -2,6 +2,9 @@ import React from "react"
 import Section from "./section"
 import Image from "./image"
 import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "./styles/carousel.css"
 
 const createAnchor = (title, link) => (
   <a href={link} target="_blank" rel="noreferrer">
@@ -12,19 +15,17 @@ const createAnchor = (title, link) => (
 const SectionOne = ({ title, id }) => {
   const sectionNumber = 3
   const settings = {
-    autoplay: true,
-    autoplaySpeed: 4000,
-    customPaging: (slick, index) => {
-      return index + 1
+    customPaging: index => {
+      return <a>{index + 1}</a>
     },
     dots: true,
-    focusOnSelect: true,
-    focusOnChange: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    fade: true,
   }
+
   return (
     <>
       <Section id={id} sectionTitle={`${sectionNumber}. What is the JAMstack`}>
@@ -102,12 +103,14 @@ const SectionOne = ({ title, id }) => {
         <Slider {...settings}>
           <div>
             <Image imageAlt="initial request" imageName="svgs/6.svg" />
+            <div className="slide_caption">Hi caption 111</div>
           </div>
           <div>
             <Image
               imageAlt="additional request for other static assets"
               imageName="svgs/7.svg"
             />
+            <div className="slide_caption">Hi caption 2</div>
           </div>
         </Slider>
         <p>
@@ -238,7 +241,7 @@ const SectionOne = ({ title, id }) => {
           id={`subtitle-${sectionNumber}-3-2`}
           data-title={`Subtitle ${sectionNumber}-3-2`}
         >
-          {`${sectionNumber}.3.3 Transitioning to a serverless model`}
+          {`${sectionNumber}.3.2 Transitioning to a serverless model`}
         </h4>
         <p>
           It is possible to take this one step further. For standard web apps,
@@ -316,8 +319,10 @@ const SectionOne = ({ title, id }) => {
         </p>
         <table className="table">
           <thead>
-            <th>Template</th>
-            <th>Static Site Generators</th>
+            <tr>
+              <th>Template</th>
+              <th>Static Site Generators</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
