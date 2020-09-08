@@ -21,9 +21,9 @@ const SectionTwo = ({ title, id }) => {
       <Section id={id} sectionTitle="4. Launching a JAMstack Web App">
         <p>
           Having understood the advantages of JAMstack web apps, developers may
-          be interested in launching such an app for themselves or their team.
-          In this section, we examine certain approaches a team would consider
-          when deploying a JAMstack app.
+          be interested in launching an app utilizing this architecture for
+          themselves or their team. In this section, we examine certain
+          approaches a team would consider when deploying a JAMstack app.
         </p>
         <h3>4.1 Manually provisioning infrastructure</h3>
         <p>
