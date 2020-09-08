@@ -57,11 +57,15 @@ const SectionTwo = ({ title, id }) => {
           to automate it to avoid repetitive tasks. To do so, the developer
           would need to implement systems that, at a minimum, can:
         </p>
-        <ul>
-          <li>Detect changes and pull code from the repository</li>
-          <li>Build the site</li>
-          <li>Deploy the built site to a hosting service</li>
-          <li>Invalidate previous content on the CDN</li>
+        <ul className="bullets">
+          <li className="list-item">
+            Detect changes and pull code from the repository
+          </li>
+          <li className="list-item">Build the site</li>
+          <li className="list-item">
+            Deploy the built site to a hosting service
+          </li>
+          <li className="list-item">Invalidate previous content on the CDN</li>
         </ul>
         <p>
           The steps involved in doing so are complex, requiring significant
