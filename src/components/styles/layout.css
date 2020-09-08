@@ -264,12 +264,12 @@ nav .bp-mark:hover {
 article.case-study {
   margin-left: 20%;
   padding: 0 25px;
-  max-width: 1200px;
-  width: 70%;
+  max-width: 60%;
+  width: 60%;
   margin-bottom: 10%;
 }
 
-article.case-study > * {
+article.case-study>* {
   margin: 0.8rem 0;
 }
 
@@ -330,7 +330,7 @@ article.case-study li.list-item {
   text-indent: -2ch;
 }
 
-article.case-study li + li {
+article.case-study li+li {
   margin-top: 0.5rem;
 }
 
@@ -485,12 +485,12 @@ article.case-study .todos li {
   border: 2px solid var(--color-claret);
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   article.case-study {
     margin-left: auto;
     margin-right: 20px;
   }
-}
+} */
 
 @media (max-width: 1000px) {
   aside a {
@@ -500,8 +500,9 @@ article.case-study .todos li {
 
 @media (max-width: 800px) {
   article.case-study {
-    margin: 0 auto;
-    width: 90%;
+    margin-left: 10%;
+    max-width: 80%;
+    width: 80%;
   }
 
   aside {
@@ -564,9 +565,9 @@ article.case-study .todos li {
     margin-top: 3%;
   }
 
-  article.case-study {
+  /* article.case-study {
     font-size: 0.9rem;
     margin: 0 auto;
     width: 90%;
-  }
+  } */
 }
