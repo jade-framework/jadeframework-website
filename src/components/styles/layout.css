@@ -307,6 +307,7 @@ article.case-study h5 {
 
 article.case-study p {
   line-height: 1.4rem;
+  text-align: justify;
 }
 
 article.case-study ul.bullets {
@@ -355,6 +356,7 @@ article.case-study ol li::before {
 article img {
   display: block;
   margin: 0.5rem auto 0.5rem;
+  width: 100%;
 }
 
 table.table {

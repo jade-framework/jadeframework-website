@@ -42,7 +42,11 @@ const Image = ({ imageAlt, imageName }) => {
   }
 
   if (!image.node.childImageSharp && image.node.extension === "svg") {
-    return <img alt={imageAlt} src={image.node.publicURL} />
+    return (
+      <div>
+        <img alt={imageAlt} src={image.node.publicURL} />
+      </div>
+    )
   } else {
     const imageFluid = image.node.childImageSharp.fluid
     return <Img alt={imageAlt} fluid={imageFluid} />
