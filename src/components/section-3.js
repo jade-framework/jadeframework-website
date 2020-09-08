@@ -14,6 +14,9 @@ const SectionThree = ({ title, id }) => {
   const settings = {
     autoplay: true,
     autoplaySpeed: 4000,
+    customPaging: (slick, index) => {
+      return index + 1
+    },
     dots: true,
     focusOnSelect: true,
     focusOnChange: true,
