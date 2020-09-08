@@ -26,6 +26,8 @@ const Image = ({ imageAlt, imageName }) => {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
             }
+            extension
+            publicURL
           }
         }
       }
@@ -33,14 +35,18 @@ const Image = ({ imageAlt, imageName }) => {
   `)
 
   const image = data.images.edges.find(n => {
-    return n.node.relativePath.includes(imageName)
+    return n.node.relativePath === imageName
   })
   if (!image) {
     return null
   }
 
-  const imageFluid = image.node.childImageSharp.fluid
-  return <Img alt={imageAlt} fluid={imageFluid} />
+  if (!image.node.childImageSharp && image.node.extension === "svg") {
+    return <img alt={imageAlt} src={image.node.publicURL} />
+  } else {
+    const imageFluid = image.node.childImageSharp.fluid
+    return <Img alt={imageAlt} fluid={imageFluid} />
+  }
 }
 
 export default Image

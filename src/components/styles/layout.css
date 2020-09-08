@@ -309,7 +309,7 @@ article.case-study p {
   line-height: 1.4rem;
 }
 
-article.case-study ul {
+article.case-study ul.bullets {
   margin-left: 3rem;
 }
 
@@ -350,6 +350,11 @@ article.case-study ol li::before {
   content: counter(list-counter) ".";
   padding-right: 2.6ch;
   color: var(--color-claret);
+}
+
+article img {
+  display: block;
+  margin: 0.5rem auto 0.5rem;
 }
 
 table.table {

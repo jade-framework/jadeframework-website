@@ -1,5 +1,7 @@
 import React from "react"
 import Section from "./section"
+import Image from "./image"
+import Slider from "react-slick"
 
 const createAnchor = (title, link) => (
   <a href={link} target="_blank" rel="noreferrer">
@@ -9,6 +11,17 @@ const createAnchor = (title, link) => (
 
 const SectionThree = ({ title, id }) => {
   const sectionNumber = 6
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 4000,
+    dots: true,
+    focusOnSelect: true,
+    focusOnChange: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
   return (
     <>
       <Section id={id} sectionTitle={`${sectionNumber}. Evolution of Jade`}>
@@ -36,7 +49,7 @@ const SectionThree = ({ title, id }) => {
           provisioned AWS infrastructure. What if a team of developers, say
           Alice and Bob, are eager to work on a JAMstack site together?
         </p>
-        <p style={{ color: "blue" }}>[first diagram of multi-user slides]</p>
+        <Image imageAlt="multi-user one user succeed" imageName="svgs/57.svg" />
         <p>
           At present, Bob does not have the necessary credentials and files to
           run the Jade command. As a result, his command fails to interact with
@@ -48,16 +61,24 @@ const SectionThree = ({ title, id }) => {
           approach, given that files may be corrupted or missing due to errors
           during the sharing process.
         </p>
-        <p style={{ color: "blue" }}>[second diagram of multi-user slides]</p>
+        <Image imageAlt="multi-user add user fail" imageName="svgs/58.svg" />
         <p>
           To overcome this, the Jade framework creates a Jade IAM group with all
           the permissions needed. The primary developer then adds secondary
           developers to this group, and now all team members will be able to
           perform the commands they need.
         </p>
-        <p style={{ color: "blue" }}>
-          [slideshow of third and fourth diagrams]
-        </p>
+        <Slider {...settings}>
+          <div>
+            <Image imageAlt="multi-user iam group" imageName="svgs/59.svg" />
+          </div>
+          <div>
+            <Image
+              imageAlt="multi-user successful commands"
+              imageName="svgs/60.svg"
+            />
+          </div>
+        </Slider>
 
         <h3
           id={`subtitle-${sectionNumber}-2`}
@@ -70,7 +91,7 @@ const SectionThree = ({ title, id }) => {
           understand what problems this may cause, let us closely examine the
           memory usage of a single EC2 instance:
         </p>
-        <p style={{ color: "blue" }}>[first diagram of multiple Jade apps]</p>
+        <Image imageAlt="single app memory okay" imageName="svgs/61.svg" />
         <p>
           At present, there is sufficient memory to handle a single application.
           EC2 will store the build environment, source code and other artifacts
@@ -83,7 +104,7 @@ const SectionThree = ({ title, id }) => {
           app makes it difficult to identify the relevant build server and
           config files for each app.
         </p>
-        <p style={{ color: "blue" }}>[second diagram of multiple Jade apps]</p>
+        <Image imageAlt="multiple apps memory fail" imageName="svgs/62.svg" />
         <p>
           To overcome this, a developer may choose to vertically scale their EC2
           server by upgrading to one with more memory. However, after starting a
@@ -94,18 +115,21 @@ const SectionThree = ({ title, id }) => {
           As such, when developers launch a new app, Jade instead provisions a
           dedicated EC2 server.
         </p>
-        <p style={{ color: "blue" }}>
-          [slideshow of 3rd/4th diagram of multiple Jade apps]
-        </p>
+        <Image imageAlt="two apps on two servers" imageName="svgs/64.svg" />
         <p>
           This not only reduces the likelihood of memory issues, it also allows
           developers to save cost by freezing their servers when not working on
           a particular app. When they would like to make an edit, they can
           unfreeze it and continue to develop their site.
         </p>
-        <p style={{ color: "blue" }}>
-          [slideshow of 5th/6th diagram of multiple Jade apps]
-        </p>
+        <Slider {...settings}>
+          <div>
+            <Image imageAlt="freezing an app" imageName="svgs/65.svg" />
+          </div>
+          <div>
+            <Image imageAlt="unfreezing an app" imageName="svgs/66.svg" />
+          </div>
+        </Slider>
         <p>
           Note that developers who make use of this functionality will have to
           update their GitHub webhook with the new IP address. To facilitate
@@ -126,9 +150,10 @@ const SectionThree = ({ title, id }) => {
           errors or extended build times. Here is an illustrative example of
           what could happen:
         </p>
-        <p style={{ color: "blue" }}>
-          [1st diagram support for different versions of JS]
-        </p>
+        <Image
+          imageAlt="dependency error with different versions"
+          imageName="svgs/67.svg"
+        />
         <p>
           To overcome this, we implemented Docker within EC2 to store build
           environments and other user configurations. To support Docker, Jade
@@ -141,9 +166,10 @@ const SectionThree = ({ title, id }) => {
           method of interacting with other AWS services, notably S3 and
           DynamoDB.
         </p>
-        <p style={{ color: "blue" }}>
-          [2nd diagram support for different versions of JS]
-        </p>
+        <Image
+          imageAlt="docker stores build dependencies"
+          imageName="svgs/68.svg"
+        />
         <p>
           As of now, Jade’s default Docker setup allows a user to build and
           deploy Gatsby applications. If desired, developers can edit the
@@ -172,9 +198,10 @@ const SectionThree = ({ title, id }) => {
           built files actually override previously built files. As a result, the
           user is unable to view previous deploys as desired.
         </p>
-        <p style={{ color: "blue" }}>
-          [slideshow: 1st/2nd diagram atomic deploys]
-        </p>
+        <Image
+          imageAlt="override previous build fail"
+          imageName="svgs/70.svg"
+        />
         <p>
           To introduce atomic deploys, Jade utilizes a new bucket to store all
           historical builds. Doing so lets developers keep track of all builds
@@ -183,7 +210,10 @@ const SectionThree = ({ title, id }) => {
           being sent to the live bucket. This allows the developer to log into
           S3 to download and view a historical build.
         </p>
-        <p style={{ color: "blue" }}>[3rd diagram atomic deploys]</p>
+        <Image
+          imageAlt="live and historical build buckets"
+          imageName="svgs/71.svg"
+        />
 
         <h3
           id={`subtitle-${sectionNumber}-5`}
@@ -197,7 +227,10 @@ const SectionThree = ({ title, id }) => {
           This means that issues with the site are not caught before they are
           distributed to end users.
         </p>
-        <p style={{ color: "blue" }}>[slideshow 1st/2nd diagram staging]</p>
+        <Image
+          imageAlt="errors are distributed to CDN"
+          imageName="svgs/73.svg"
+        />
         <p>
           To allow developers to view their site, we introduce the use of a
           <code>staging</code> branch where developers can view their website
@@ -207,7 +240,10 @@ const SectionThree = ({ title, id }) => {
           <code>git push origin master</code> once they are satisfied with the
           site.
         </p>
-        <p style={{ color: "blue" }}>[3rd diagram staging]</p>
+        <Image
+          imageAlt="staging branch enables previews"
+          imageName="svgs/74.svg"
+        />
 
         <h3
           id={`subtitle-${sectionNumber}-6`}
@@ -221,14 +257,14 @@ const SectionThree = ({ title, id }) => {
           staging build. This may become complicated and requires developers to
           be careful about which build they are downloading and viewing.
         </p>
-        <p style={{ color: "blue" }}>[1st diagram versioning]</p>
+        <Image imageAlt="aws console is complex" imageName="svgs/75.svg" />
         <p>
           To facilitate ease of use, users can simply use the{" "}
           <code>jade admin</code> command to spin up an admin panel. This admin
           panel uses an Express.js server coupled with React on the frontend to
           generate a dashboard for users.
         </p>
-        <p style={{ color: "blue" }}>[slideshow 2nd/3rd diagram versioning]</p>
+        <Image imageAlt="admin panel" imageName="svgs/77.svg" />
         <p>
           The admin panel provides key information about all the Jade apps that
           the developer is running. Developers are provided with a link to their
@@ -247,12 +283,13 @@ const SectionThree = ({ title, id }) => {
           To demonstrate how Jade has evolved, here is a review of the core
           functionality that every JaaS provider offers:
         </p>
-        <p style={{ color: "blue" }}>[1st diagram final architecture]</p>
+        <Image imageAlt="jaas provider review" imageName="svgs/35.svg" />
+
         <p>
           With Jade features added to this functionality, our final architecture
           looks like this:
         </p>
-        <p style={{ color: "blue" }}>[2nd diagram final architecture]</p>
+        <Image imageAlt="jade final architecture" imageName="svgs/79.svg" />
       </Section>
 
       <Section id={id} sectionTitle={`${sectionNumber + 1}. Future work`}>
