@@ -86,6 +86,7 @@ const Article = styled.article`
   & img {
     display: block;
     margin: 0.5rem auto 0.5rem;
+    max-width: 100%;
   }
 `
 
