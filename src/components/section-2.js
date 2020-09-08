@@ -33,7 +33,15 @@ const SectionTwo = ({ title, id }) => {
           functionality, a developer would need to provision a minimum of 5
           services as outlined below.
         </p>
-        <Image imageName="2-provisioning-services.png" />
+        {/* <Image imageName="2-provisioning-services.png" /> */}
+        <Image imageName="svgs/30.svg" imageAlt="Provisioning Services" />
+        <p>
+          Each service requires multiple steps to provision and must
+          subsequently be configured to interact with other services. This is a
+          time-intensive process that requires in-depth knowledge of the cloud
+          provider and must be completed for each application the developer
+          launches.
+        </p>
         <h3>4.2 Maintaining the application</h3>
         <p>
           After provisioning infrastructure, the developer needs to consider how
@@ -43,7 +51,7 @@ const SectionTwo = ({ title, id }) => {
           complete, the application needs to be uploaded to a hosting
           environment and previous content on the CDN must be invalidated.
         </p>
-        <Image imageName="2-workflow-2.png" />
+        {/* <Image imageName="2-workflow-2.png" /> */}
         <p>
           While this process can be handled manually, developers may be tempted
           to automate it to avoid repetitive tasks. To do so, the developer
