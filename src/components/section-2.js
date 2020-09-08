@@ -18,7 +18,7 @@ const SectionTwo = ({ title, id }) => {
 
   return (
     <>
-      <Section id={id} sectionTitle="Launching a JAMstack Web App">
+      <Section id={id} sectionTitle="4. Launching a JAMstack Web App">
         <p>
           Having understood the advantages of JAMstack web apps, developers may
           be interested in launching such an app for themselves or their team.
@@ -34,7 +34,6 @@ const SectionTwo = ({ title, id }) => {
           services as outlined below.
         </p>
         <Image imageName="2-provisioning-services.png" />
-        <img src="/2-provisioning-services.png" />
         <h3>4.2 Maintaining the application</h3>
         <p>
           After provisioning infrastructure, the developer needs to consider how
