@@ -33,9 +33,9 @@ const CaseStudyPage = () => {
   const handleWaypointLeave = () => setStickyMenu(true)
 
   const sections = [
-    { id: "section-1", title: "Krunal's" },
-    { id: "section-2", title: "Jer's" },
-    { id: "section-3", title: "Edmond's" },
+    { id: "section-1", title: "JAMstack" },
+    { id: "section-2", title: "Jade Core" },
+    { id: "section-3", title: "Evolution of Jade" },
   ]
 
   return (
