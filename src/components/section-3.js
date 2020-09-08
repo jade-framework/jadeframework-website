@@ -1,7 +1,10 @@
 import React from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
 import Section from "./section"
 import Image from "./image"
-import Slider from "react-slick"
 
 const createAnchor = (title, link) => (
   <a href={link} target="_blank" rel="noreferrer">
@@ -14,8 +17,8 @@ const SectionThree = ({ title, id }) => {
   const settings = {
     autoplay: true,
     autoplaySpeed: 4000,
-    customPaging: (slick, index) => {
-      return index + 1
+    customPaging: index => {
+      return <a>{index + 1}</a>
     },
     dots: true,
     focusOnSelect: true,

@@ -134,7 +134,7 @@ const CaseStudyPage = () => {
         <Article className="case-study">
           {/* <SectionOne id={sections[0].id} title={sections[0].title} /> */}
           <SectionTwo id={sections[1].id} title={sections[1].title} />
-          {/* <SectionThree id={sections[2].id} title={sections[2].title} /> */}
+          <SectionThree id={sections[2].id} title={sections[2].title} />
           {/* <SectionExample /> */}
         </Article>
       </Container>
