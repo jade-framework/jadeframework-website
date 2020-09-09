@@ -109,6 +109,14 @@ const GlobalStyles = createGlobalStyle`
     text-align: center;
     font-size: 0.8em;
     margin: auto;
+  .slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
   }
 
   .superscript { 

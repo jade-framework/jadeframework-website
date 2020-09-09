@@ -208,9 +208,6 @@ const SectionTwo = ({ title, id }) => {
             <div>
               <Image imageName="svgs/47.svg" imageAlt="Build Process 4" />
             </div>
-            <div>
-              <Image imageName="svgs/48.svg" imageAlt="Build Process 5" />
-            </div>
           </Slider>
           <h4>5.1.3 Examining the build process</h4>
           <p>
@@ -221,6 +218,7 @@ const SectionTwo = ({ title, id }) => {
             already pulled from Github and data stored in external sources such
             as a content management system.
           </p>
+          <Image imageName="svgs/48.svg" imageAlt="Build Process 5" />
           <p>
             Jade is configured to utilize Gatsby as a static site generator and
             Contentful as a content management system. There are a multitude of
