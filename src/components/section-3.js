@@ -18,7 +18,7 @@ const SectionThree = ({ title, id }) => {
     autoplay: true,
     autoplaySpeed: 4000,
     customPaging: index => {
-      return <a>{index + 1}</a>
+      return <button>{index + 1}</button>
     },
     dots: true,
     focusOnSelect: true,
@@ -287,7 +287,7 @@ const SectionThree = ({ title, id }) => {
         </h3>
         <p>
           To demonstrate how Jade has evolved, here is a review of the core
-          functionality that every JaaS provider offers:
+          functionality that many JaaS providers offer:
         </p>
         <Image imageAlt="jaas provider review" imageName="svgs/35.svg" />
 

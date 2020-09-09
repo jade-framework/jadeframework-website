@@ -193,7 +193,7 @@ const SectionOne = ({ title, id }) => {
             Transpile - Convert ES6+ code to ES5 in order to remain compatible
             with all major modern web browsers
           </li>
-          <li>
+          <li className="list-item">
             Bundle - Combine one or more resources such as HTML files,
             JavaScript files, stylesheets, and images into a single file
           </li>
