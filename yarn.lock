@@ -11401,6 +11401,11 @@ react@^16.12.0, react@^16.8.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
+reactjs-popup@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/reactjs-popup/-/reactjs-popup-2.0.3.tgz#fd81e95671a6bc00eed38573db43ffaf08ce5a46"
+  integrity sha512-X/MxeOMwVAnqeCUaN8tvmiKEhqWB6Aa7m1UqAzotp8sGTcXWIGW6/Wsil7GT8AW5eFeeFWBavmytQJVcvEQTnA==
+
 read-chunk@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/read-chunk/-/read-chunk-3.2.0.tgz#2984afe78ca9bfbbdb74b19387bf9e86289c16ca"

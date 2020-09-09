@@ -21,6 +21,7 @@
     "react-scroll": "^1.8.1",
     "react-slick": "^0.27.10",
     "react-waypoint": "^9.0.3",
+    "reactjs-popup": "^2.0.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1"
   },

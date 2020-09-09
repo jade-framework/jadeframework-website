@@ -1,9 +1,12 @@
 import React from "react"
 import Section from "./section"
 import Image from "./image"
+import Card from "./card"
 import Slider from "react-slick"
+import Popup from "reactjs-popup"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import "reactjs-popup/dist/index.css"
 
 const createAnchor = (title, link) => (
   <a href={link} target="_blank" rel="noreferrer">
@@ -289,17 +292,30 @@ const SectionOne = ({ title, id }) => {
           particularly suited to applications that can source data and pre-build
           pages before runtime. This term was coined by the CEO of Netlify,
           Mathias Billmann, who refers to it as a "modern web development
-          architecture based on client-side <b>JavaScript</b>, reusable{" "}
-          <b>APIs</b>, and prebuilt <b>Markup</b>."
+          architecture based on client-side <b>JavaScript</b>, reusable
+          <b>APIs</b>, and prebuilt <b>Markup</b>.
         </p>
         <p style={{ color: "blue" }}>[diagram: JAM acronym] </p>
         <p>
-          Being used in nearly 97% of all websites on the internet
-          [https://w3techs.com/technologies/history_overview/client_side_language/all],
-          JavaScript and its rich ecosystem of resources has grown to be highly
-          adept at handling all types of dynamic functionality needed at
-          runtime. While the use of JavaScript is not unique to the JAMstack, it
-          is a key factor in enabling a shift towards a serverless model.
+          Being used in nearly 97% of all websites on the internet JavaScript
+          and its rich ecosystem of resources has grown to be highly adept at
+          handling all types of dynamic functionality needed at runtime.
+          <span className="wrapper">
+            <Popup
+              trigger={<span className="superscript">4</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="testing title"
+                author="Krunal Patel"
+                date="September 20"
+              ></Card>
+            </Popup>
+          </span>
+          While the use of JavaScript is not unique to the JAMstack, it is a key
+          factor in enabling a shift towards a serverless model.
         </p>
         <p>
           For standard web apps, servers are used to provide dynamic

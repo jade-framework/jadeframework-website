@@ -99,6 +99,13 @@ const GlobalStyles = createGlobalStyle`
     margin: 0.5rem auto 1rem;
     bottom: 0px;
   }
+
+  .superscript { 
+    position: relative; 
+    top: -0.5em; 
+    font-size: 80%; 
+    color: blue;
+  }
 `
 
 export default GlobalStyles
