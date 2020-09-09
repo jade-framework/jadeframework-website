@@ -74,8 +74,9 @@ const SectionOne = ({ title, id }) => {
           Most web apps these days are able to serve dynamic content, using an
           architecture we refer to as the standard web app architecture.
           Standard web apps use application servers and databases, which
-          together are responsible for two main tasks: <b>managing data</b> and
-          <b>other business logic</b>.
+          together are responsible for two main tasks:
+          <span className="emphasize">managing data</span> and
+          <span className="emphasize">other business logic</span>.
         </p>
         <Image imageAlt="web app architecture" imageName="svgs/5.svg" />
         <p>
@@ -86,7 +87,7 @@ const SectionOne = ({ title, id }) => {
           id={`subtitle-${sectionNumber}-2`}
           data-title={`Subtitle ${sectionNumber}-2`}
         >
-          {`${sectionNumber}.2 Building web pages`}
+          {`${sectionNumber}.2 Serving content from a traditional architecture`}
         </h3>
         <h4
           id={`subtitle-${sectionNumber}-2-1`}
@@ -95,67 +96,145 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.2.1 How web pages are served`}
         </h4>
         <p>
-          When a client makes a GET request to the web server, the web server
-          sends back an HTML file in the response. The client makes another
-          request to the web server for any static assets the HTML file is
-          referencing, such as images or CSS files. Once the browser has all the
-          files the final page will be rendered for the user to view. As such,
-          the web page is always built following each request from the client.
+          A web server sends back a text file, usually of the type ".html", in
+          response to a client GET request. If the site is a simple web page
+          consisting of only an HTML file, then the request/response stage is
+          complete. Most web pages, however, have additional resources such as
+          CSS files, JavaScript files, and images. The client will parse the
+          HTML file looking for any referenced resources. If found, the client
+          will make additional requests for those resources.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">2</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="How a webpage is loaded and displayed"
+                author="Patrick Sexton"
+                organization="Varvy"
+                date="October 26, 2015"
+              ></Card>
+            </Popup>
+          </span>
+          Once the browser has all the files the final page will be rendered for
+          the user to view. It's important to note that web pages are built on
+          request from the client.
         </p>
         <Slider {...settings}>
           <div>
             <Image imageAlt="initial request" imageName="svgs/6.svg" />
-            <div className="slide_caption">Hi caption 111</div>
+            <p className="slide-caption">
+              On the inititial GET request the web server returns an HTML file
+            </p>
           </div>
           <div>
             <Image
               imageAlt="additional request for other static assets"
               imageName="svgs/7.svg"
             />
-            <div className="slide_caption">Hi caption 2</div>
+            <p className="slide-caption">
+              Additional GET requests are made for any resources referenced in
+              the HTML file
+            </p>
           </div>
         </Slider>
-        <p>
-          The multiple requests made in order to receive the HTML file and all
-          supporting/referenced assets can add to network latency. Moreover, In
-          some cases the client will build and render the page only if it has
-          all the necessary files. Instead, if the server can pre-build files
-          ahead of time, it would greatly benefit both end users and developers.
-        </p>
         <h4
           id={`subtitle-${sectionNumber}-2-2`}
           data-title={`Subtitle ${sectionNumber}-2-2`}
         >
-          {`${sectionNumber}.2.2 Building web pages`}
+          {`${sectionNumber}.2.2 How web pages are dynamically built`}
         </h4>
         <p>
-          When it comes to static pages, content can be pre-populated on the
-          server-side as previously mentioned. This allows pages to load faster
-          on the browser.
-        </p>
-        <p>
-          For dynamic content, pages are built client-side as data is being
-          processed and populated by the application server. This results in a
-          delay loading the pages.
+          Dynamic content is usually built on the client-side. On an initial GET
+          request, the web server sends the client a skeleton HTML template
+          which will be populated with data on AJAX requests. This results in a
+          delay loading the page as data is being processed by the app server.
         </p>
         <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
-        <p>
-          To counter the load delay, developers can pre-build pages in order to
-          receive the same benefits as server-side rendering.
-        </p>
+        <p className="slide-caption">Dynamic content is built at runtime</p>
         <h4
           id={`subtitle-${sectionNumber}-2-3`}
           data-title={`Subtitle ${sectionNumber}-2-3`}
         >
-          {`${sectionNumber}.2.3 Pre-building pages before serving`}
+          {`${sectionNumber}.2.3 The problem`}
+        </h4>
+        <p>Two architectures have been introduced so far:</p>
+        <ul className="bullets">
+          <li className="list-item">Traditional web site architecture</li>
+          <li className="list-item">Traditional web app architecture</li>
+        </ul>
+        <p>
+          The traditional web site architecture is able to serve static content
+          which is fast to load. However to serve dynamic content requires the
+          traditional web app architecture. Dynamic content can be served using
+          the traditional web app architecture but the trade-off is performance.
+          Web pages take longer to load due to data processing and other backend
+          processing that occurs. Also, to support dynamic content requires the
+          developer to managage backend infrastructure.
+        </p>
+        <p>
+          Web page speed, the time it takes to fully display content on a page,
+          is an important factor to consider. Almost 50% of users expect a web
+          page to load within 2 seconds and if a page takes longer than 3
+          seconds to load, 53% of users will abandon the site.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">6</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="How Page Speed Affects SEO & Google Rankings | The 2020 Page Speed Guide"
+                author="Adrian Cojocariu"
+                organization="CognitiveSEO"
+              ></Card>
+            </Popup>
+          </span>
+        </p>
+        <p>
+          Web page speed is also a criteria for search engine optimizations.
+          Google and other search engines take into account web page speeds for
+          their search rankings.
+        </p>
+        <h4
+          id={`subtitle-${sectionNumber}-2-4`}
+          data-title={`Subtitle ${sectionNumber}-2-4`}
+        >
+          {`${sectionNumber}.2.4 Preclude to a different architecture`}
         </h4>
         <p>
-          Pre-building files is a technique where content is assembled ahead of
-          time, usually on the server-side. When a client request comes in, the
-          server can respond with these pre-built web files which includes the
-          HTML file and all referenced static assets. This allows the client to
-          avoid retrieving additional static assets with other requests, leading
-          to the following benefits:
+          Even with the performance hit, the standard web app architecture will
+          continue to exist due to the benefits outweighing the cons. However,
+          for a very specific criteria of web apps, its possible to get the
+          benefit of both the architectures mentioned above which are:
+        </p>
+        <ul className="bullets">
+          <li className="list-item">Web page speed of static web sites</li>
+          <li className="list-item">Dynamic functionality of web apps</li>
+        </ul>
+        <h3
+          id={`subtitle-${sectionNumber}-3`}
+          data-title={`Subtitle ${sectionNumber}-3`}
+        >
+          {`${sectionNumber}.3 New architecture for certain use cases`}
+        </h3>
+        <h4
+          id={`subtitle-${sectionNumber}-3-1`}
+          data-title={`Subtitle ${sectionNumber}-3-1`}
+        >
+          {`${sectionNumber}.3.1 Pre-building pages to improve load time`}
+        </h4>
+        <p>
+          Certain web pages are able to source data at build time. Those that
+          meet this criteria can pre-build their pages which is a technique
+          where content is assembled ahead of time, usually on the server-side.
+          When a client request comes in, the server can respond with these
+          pre-built web files which includes the HTML file and all referenced
+          static assets. This allows the client to avoid retrieving additional
+          static assets with other requests, leading to the following benefits:
         </p>
         <ul className="bullets">
           <li className="list-item">
@@ -169,10 +248,10 @@ const SectionOne = ({ title, id }) => {
         </ul>
         <Image imageAlt="pre-building pages" imageName="svgs/9.svg" />
         <h4
-          id={`subtitle-${sectionNumber}-2-4`}
-          data-title={`Subtitle ${sectionNumber}-2-4`}
+          id={`subtitle-${sectionNumber}-3-2`}
+          data-title={`Subtitle ${sectionNumber}-3-2`}
         >
-          {`${sectionNumber}.2.4 Static site generators`}
+          {`${sectionNumber}.3.2 Static site generators`}
         </h4>
         <p>
           A popular tool for pre-building web pages are static site generators
@@ -199,25 +278,20 @@ const SectionOne = ({ title, id }) => {
           </li>
         </ul>
         <p>
-          The most important step here is the <em>compile</em> step, which
-          involves applying data/content to the right templates in order to
-          generate static HTML. By compiling the data ahead of time, there is no
-          need for server-side processing, which can be time-consuming. This
-          allows files to be pre-built as the data has already been
-          incorporated, allowing content to be delivered faster to end users.
+          The most important step here is the
+          <span className="emphasize"> compile</span> step, which involves
+          applying data/content to the right templates in order to generate
+          static HTML. By compiling the data ahead of time, there is no need for
+          server-side processing, which can be time-consuming. This allows files
+          to be pre-built as the data has already been incorporated, allowing
+          content to be delivered faster to end users.
         </p>
         <Image imageAlt="SSGs" imageName="svgs/10.svg" />
-        <h3
-          id={`subtitle-${sectionNumber}-3`}
-          data-title={`Subtitle ${sectionNumber}-3`}
-        >
-          {`${sectionNumber}.3 XXX`}
-        </h3>
         <h4
-          id={`subtitle-${sectionNumber}-3-1`}
-          data-title={`Subtitle ${sectionNumber}-3-1`}
+          id={`subtitle-${sectionNumber}-3-3`}
+          data-title={`Subtitle ${sectionNumber}-3-3`}
         >
-          {`${sectionNumber}.3.1 Taking advantage of pre-built pages`}
+          {`${sectionNumber}.3.3 Taking advantage of pre-built pages`}
         </h4>
         <p>
           Pre-building web pages can actually open up changes in the standard
@@ -240,10 +314,10 @@ const SectionOne = ({ title, id }) => {
           imageName="svgs/12.svg"
         />
         <h4
-          id={`subtitle-${sectionNumber}-3-2`}
-          data-title={`Subtitle ${sectionNumber}-3-2`}
+          id={`subtitle-${sectionNumber}-3-4`}
+          data-title={`Subtitle ${sectionNumber}-3-4`}
         >
-          {`${sectionNumber}.3.2 Transitioning to a serverless model`}
+          {`${sectionNumber}.3.4 Transitioning to a serverless model`}
         </h4>
         <p>
           It is possible to take this one step further. For standard web apps,
@@ -292,25 +366,38 @@ const SectionOne = ({ title, id }) => {
           particularly suited to applications that can source data and pre-build
           pages before runtime. This term was coined by the CEO of Netlify,
           Mathias Billmann, who refers to it as a "modern web development
-          architecture based on client-side <b>JavaScript</b>, reusable
-          <b>APIs</b>, and prebuilt <b>Markup</b>.
+          architecture based on client-side
+          <span className="emphasize"> JavaScript</span>, reusable
+          <span className="emphasize"> APIs</span>, and prebuilt
+          <span className="emphasize"> Markup</span>."
         </p>
-        <p style={{ color: "blue" }}>[diagram: JAM acronym] </p>
+        <table id="jam-table">
+          <tbody>
+            <tr>
+              <td>JavaScript</td>
+              <td>APIs</td>
+              <td>Markup</td>
+            </tr>
+            <tr>
+              <td colSpan="3">JAMstack</td>
+            </tr>
+          </tbody>
+        </table>
         <p>
           Being used in nearly 97% of all websites on the internet JavaScript
           and its rich ecosystem of resources has grown to be highly adept at
           handling all types of dynamic functionality needed at runtime.
-          <span className="wrapper">
+          <span className="span-wrapper">
             <Popup
-              trigger={<span className="superscript">4</span>}
+              trigger={<span className="superscript">3</span>}
               position="bottom center"
               on={["hover", "focus"]}
               arrow={"bottom center" !== "center center"}
             >
               <Card
-                title="testing title"
-                author="Krunal Patel"
-                date="September 20"
+                title="Historical trends in the usage statistics of client-side programming languages for websites"
+                organization="W3Techs"
+                date="September 1, 2020"
               ></Card>
             </Popup>
           </span>
@@ -331,8 +418,21 @@ const SectionOne = ({ title, id }) => {
           application providing an interface for users to create, manage, and
           modify content. Below is a table listing some of the common static
           site generators and their templates:
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">4</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="A List of Static Site Generators for Jamstack Sites"
+                organization="StaticGen"
+              ></Card>
+            </Popup>
+          </span>
         </p>
-        <table className="table">
+        <table id="ssg-table">
           <thead>
             <tr>
               <th>Template</th>
@@ -423,8 +523,8 @@ const SectionOne = ({ title, id }) => {
           much of the site pre-built before being uploaded to the CDN.
         </p>
         <p>
-          The use of CDNs to serve pre-built files has significant advantages.
-          These are:
+          The use of CDNs to serve pre-built files has significant advantages
+          some of which are:
         </p>
         <ul className="bullets">
           <li className="list-item">An improved response time</li>
@@ -434,12 +534,28 @@ const SectionOne = ({ title, id }) => {
         </ul>
         <p>
           Improved response time comes from the fact that CDNs have edge
-          locations closer to the end user. In many cases CDNs can reduce
-          latencies by 100’s of ms. Traffic is routed to the nearest edge
-          location, improving the distribution of assets to traffic globally.
-          Relative to using servers, CDNs are also easier to scale due to the
-          ease at which edge locations can be added and removed from a system.
-          As a result, increases in traffic are handled better.
+          locations closer to the end user.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">5</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="Why Use a CDN? Here Are 10 Data-Driven Reasons"
+                organization="keycdn"
+                date="March 4, 2019"
+                author="Brian Jackson"
+              ></Card>
+            </Popup>
+          </span>
+          In many cases CDNs can reduce latencies by 100’s of ms. Traffic is
+          routed to the nearest edge location, improving the distribution of
+          assets to traffic globally. Relative to using servers, CDNs are also
+          easier to scale due to the ease at which edge locations can be added
+          and removed from a system. As a result, increases in traffic are
+          handled better.
         </p>
         <p>
           CDNs also have high reliability. If an edge location goes down, a user
@@ -540,7 +656,21 @@ const SectionOne = ({ title, id }) => {
         <p>
           To manage a website that is frequently updated, the JAMstack community
           has established best practices when it comes to deploying JAMstack
-          sites. These elements are part of what is called “The JAMstack Way”:
+          sites.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">1</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="Jamstack Best Practices"
+                organization="Jamstack"
+              ></Card>
+            </Popup>
+          </span>
+          These elements are part of what is called “The JAMstack Way”:
         </p>
         {/* <ul className="bullets">
           <li className="list-item">Version control</li>

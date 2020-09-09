@@ -1,14 +1,21 @@
 import React from "react"
-import styled from "styled-components"
 
-const Card = ({ title, author, date }) => {
+const Card = props => {
+  let attrs = Object.keys(props)
   return (
-    <div>
-      <h3>Citation</h3>
-      <h5>Author: {author}</h5>
-      <h5>Title: {title} </h5>
-      <h5>Date: {date}</h5>
-    </div>
+    <table className="citation-table">
+      <tr>
+        <th colSpan="2">Citation</th>
+      </tr>
+      {attrs.map(attr => {
+        return (
+          <tr className="citation-attr">
+            <td>{attr[0].toUpperCase() + attr.slice(1)}</td>
+            <td>{props[attr]}</td>
+          </tr>
+        )
+      })}
+    </table>
   )
 }
 

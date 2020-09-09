@@ -319,6 +319,53 @@ const SectionThree = ({ title, id }) => {
       </Section>
 
       <Section id={id} sectionTitle={`${sectionNumber + 2}. Bibliography`}>
+        <h4
+          id={`subtitle-${sectionNumber + 2}-1`}
+          data-title={`Subtitle ${sectionNumber + 2}-1`}
+        >
+          {`${sectionNumber + 2}.1 Footnotes`}
+        </h4>
+        <ol className="bullets">
+          <li className="list-item">
+            {createAnchor("Overview of the JAMstack", "https://jamstack.org")}
+          </li>
+          <li className="list-item">
+            {createAnchor(
+              "How a webpage is built",
+              "https://varvy.com/pagespeed/display.html"
+            )}
+          </li>
+          <li className="list-item">
+            {createAnchor(
+              "Historical trends in the usage statistics of client-side programming languages for websites",
+              "https://w3techs.com/technologies/history_overview/client_side_language/all"
+            )}
+          </li>
+          <li className="list-item">
+            {createAnchor(
+              "A List of Static Site Generators for Jamstack Sites",
+              "https://www.staticgen.com/"
+            )}
+          </li>
+          <li className="list-item">
+            {createAnchor(
+              "Why Use a CDN? Here Are 10 Data-Driven Reasons",
+              "https://www.keycdn.com/blog/why-use-a-cdn"
+            )}
+          </li>
+          <li className="list-item">
+            {createAnchor(
+              "How Page Speed Affects SEO & Google Rankings | The 2020 Page Speed Guide",
+              "https://cognitiveseo.com/blog/22865/page-speed-seo/#4"
+            )}
+          </li>
+        </ol>
+        <h4
+          id={`subtitle-${sectionNumber + 2}-2`}
+          data-title={`Subtitle ${sectionNumber + 2}-2`}
+        >
+          {`${sectionNumber + 2}.1 References`}
+        </h4>
         <ul className="bullets">
           <li className="list-item">
             {createAnchor("Overview of the JAMstack", "https://jamstack.org")}
