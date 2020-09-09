@@ -200,19 +200,41 @@ const SectionOne = ({ title, id }) => {
           their search rankings.
         </p>
         <h4
-          id={`subtitle-${sectionNumber}-2-3`}
-          data-title={`Subtitle ${sectionNumber}-2-3`}
+          id={`subtitle-${sectionNumber}-2-4`}
+          data-title={`Subtitle ${sectionNumber}-2-4`}
         >
-          {`${sectionNumber}.2.3 Pre-building pages to improve load time`}
+          {`${sectionNumber}.2.4 Preclude to a different architecture`}
         </h4>
         <p>
-          A very specific criteria of web pages can be pre-built in order to
-          decrease load times. Pre-building is a technique where content is
-          assembled ahead of time, usually on the server-side. When a client
-          request comes in, the server can respond with these pre-built web
-          files which includes the HTML file and all referenced static assets.
-          This allows the client to avoid retrieving additional static assets
-          with other requests, leading to the following benefits:
+          Even with the performance hit, the standard web app architecture will
+          continue to exist due to the benefits outweighing the cons. However,
+          for a very specific criteria of web apps, its possible to get the
+          benefit of both the architectures mentioned above which are:
+        </p>
+        <ul className="bullets">
+          <li className="list-item">Web page speed of static web sites</li>
+          <li className="list-item">Dynamic functionality of web apps</li>
+        </ul>
+        <h3
+          id={`subtitle-${sectionNumber}-3`}
+          data-title={`Subtitle ${sectionNumber}-3`}
+        >
+          {`${sectionNumber}.3 New architecture for certain use cases`}
+        </h3>
+        <h4
+          id={`subtitle-${sectionNumber}-3-1`}
+          data-title={`Subtitle ${sectionNumber}-3-1`}
+        >
+          {`${sectionNumber}.3.1 Pre-building pages to improve load time`}
+        </h4>
+        <p>
+          Certain web pages are able to source data at build time. Those that
+          meet this criteria can pre-build their pages which is a technique
+          where content is assembled ahead of time, usually on the server-side.
+          When a client request comes in, the server can respond with these
+          pre-built web files which includes the HTML file and all referenced
+          static assets. This allows the client to avoid retrieving additional
+          static assets with other requests, leading to the following benefits:
         </p>
         <ul className="bullets">
           <li className="list-item">
@@ -225,15 +247,11 @@ const SectionOne = ({ title, id }) => {
           </li>
         </ul>
         <Image imageAlt="pre-building pages" imageName="svgs/9.svg" />
-        <p>
-          Not all web pages can be pre-built ahead of time. Only web pages that
-          can source data at build time are great candidates for this technique.
-        </p>
         <h4
-          id={`subtitle-${sectionNumber}-2-4`}
-          data-title={`Subtitle ${sectionNumber}-2-4`}
+          id={`subtitle-${sectionNumber}-3-2`}
+          data-title={`Subtitle ${sectionNumber}-3-2`}
         >
-          {`${sectionNumber}.2.4 Static site generators`}
+          {`${sectionNumber}.3.2 Static site generators`}
         </h4>
         <p>
           A popular tool for pre-building web pages are static site generators
@@ -269,17 +287,11 @@ const SectionOne = ({ title, id }) => {
           content to be delivered faster to end users.
         </p>
         <Image imageAlt="SSGs" imageName="svgs/10.svg" />
-        <h3
-          id={`subtitle-${sectionNumber}-3`}
-          data-title={`Subtitle ${sectionNumber}-3`}
-        >
-          {`${sectionNumber}.3 New architecture for certain use cases`}
-        </h3>
         <h4
-          id={`subtitle-${sectionNumber}-3-1`}
-          data-title={`Subtitle ${sectionNumber}-3-1`}
+          id={`subtitle-${sectionNumber}-3-3`}
+          data-title={`Subtitle ${sectionNumber}-3-3`}
         >
-          {`${sectionNumber}.3.1 Taking advantage of pre-built pages`}
+          {`${sectionNumber}.3.3 Taking advantage of pre-built pages`}
         </h4>
         <p>
           Pre-building web pages can actually open up changes in the standard
@@ -302,10 +314,10 @@ const SectionOne = ({ title, id }) => {
           imageName="svgs/12.svg"
         />
         <h4
-          id={`subtitle-${sectionNumber}-3-2`}
-          data-title={`Subtitle ${sectionNumber}-3-2`}
+          id={`subtitle-${sectionNumber}-3-4`}
+          data-title={`Subtitle ${sectionNumber}-3-4`}
         >
-          {`${sectionNumber}.3.2 Transitioning to a serverless model`}
+          {`${sectionNumber}.3.4 Transitioning to a serverless model`}
         </h4>
         <p>
           It is possible to take this one step further. For standard web apps,
