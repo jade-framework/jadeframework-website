@@ -96,23 +96,48 @@ const SectionOne = ({ title, id }) => {
         </h4>
         <p>
           When a client makes a GET request to the web server, the web server
-          sends back an HTML file in the response. The client makes another
-          request to the web server for any static assets the HTML file is
-          referencing, such as images or CSS files. Once the browser has all the
-          files the final page will be rendered for the user to view. As such,
-          the web page is always built following each request from the client.
+          sends back a text file, usually of the type ".html", in the response.
+          If the site is a simple webpage consisting of only an HTML file then
+          the request/response stage is complete. Most webpages, however, have
+          additional resources such as CSS files, JavaScript files, and images.
+          The client will parse the HTML file looking for any referenced
+          resources and, if found, will make additional requests for those
+          resources.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">2</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="How a webpage is loaded and displayed"
+                author="Patrick Sexton"
+                organization="Varvy"
+                date="October 26, 2015"
+              ></Card>
+            </Popup>
+          </span>
+          Once the browser has all the files the final page will be rendered for
+          the user to view. As such, the web page is always built following each
+          request from the client.
         </p>
         <Slider {...settings}>
           <div>
             <Image imageAlt="initial request" imageName="svgs/6.svg" />
-            <div className="slide_caption">Hi caption 111</div>
+            <p className="slide-caption">
+              On the inititial GET request the web server returns an HTML file
+            </p>
           </div>
           <div>
             <Image
               imageAlt="additional request for other static assets"
               imageName="svgs/7.svg"
             />
-            <div className="slide_caption">Hi caption 2</div>
+            <p className="slide-caption">
+              Additional GET requests are made for any resources referenced in
+              the HTML file
+            </p>
           </div>
         </Slider>
         <p>
@@ -139,6 +164,9 @@ const SectionOne = ({ title, id }) => {
           delay loading the pages.
         </p>
         <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
+        <p className="slide-caption">
+          The app server dynamically builds pages at runtime
+        </p>
         <p>
           To counter the load delay, developers can pre-build pages in order to
           receive the same benefits as server-side rendering.
@@ -193,7 +221,7 @@ const SectionOne = ({ title, id }) => {
             Transpile - Convert ES6+ code to ES5 in order to remain compatible
             with all major modern web browsers
           </li>
-          <li>
+          <li className="list-item">
             Bundle - Combine one or more resources such as HTML files,
             JavaScript files, stylesheets, and images into a single file
           </li>
@@ -211,7 +239,7 @@ const SectionOne = ({ title, id }) => {
           id={`subtitle-${sectionNumber}-3`}
           data-title={`Subtitle ${sectionNumber}-3`}
         >
-          {`${sectionNumber}.3 XXX`}
+          {`${sectionNumber}.3 Change in architecture`}
         </h3>
         <h4
           id={`subtitle-${sectionNumber}-3-1`}
@@ -295,22 +323,33 @@ const SectionOne = ({ title, id }) => {
           architecture based on client-side <b>JavaScript</b>, reusable
           <b>APIs</b>, and prebuilt <b>Markup</b>.
         </p>
-        <p style={{ color: "blue" }}>[diagram: JAM acronym] </p>
+        <table id="jam-table">
+          <tbody>
+            <tr>
+              <td>JavaScript</td>
+              <td>APIs</td>
+              <td>Markup</td>
+            </tr>
+            <tr>
+              <td colSpan="3">JAMstack</td>
+            </tr>
+          </tbody>
+        </table>
         <p>
           Being used in nearly 97% of all websites on the internet JavaScript
           and its rich ecosystem of resources has grown to be highly adept at
           handling all types of dynamic functionality needed at runtime.
-          <span className="wrapper">
+          <span className="span-wrapper">
             <Popup
-              trigger={<span className="superscript">4</span>}
+              trigger={<span className="superscript">3</span>}
               position="bottom center"
               on={["hover", "focus"]}
               arrow={"bottom center" !== "center center"}
             >
               <Card
-                title="testing title"
-                author="Krunal Patel"
-                date="September 20"
+                title="Historical trends in the usage statistics of client-side programming languages for websites"
+                organization="W3Techs"
+                date="September 1, 2020"
               ></Card>
             </Popup>
           </span>
@@ -331,8 +370,21 @@ const SectionOne = ({ title, id }) => {
           application providing an interface for users to create, manage, and
           modify content. Below is a table listing some of the common static
           site generators and their templates:
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">4</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="A List of Static Site Generators for Jamstack Sites"
+                organization="StaticGen"
+              ></Card>
+            </Popup>
+          </span>
         </p>
-        <table className="table">
+        <table id="ssg-table">
           <thead>
             <tr>
               <th>Template</th>
@@ -423,8 +475,8 @@ const SectionOne = ({ title, id }) => {
           much of the site pre-built before being uploaded to the CDN.
         </p>
         <p>
-          The use of CDNs to serve pre-built files has significant advantages.
-          These are:
+          The use of CDNs to serve pre-built files has significant advantages
+          some of which are:
         </p>
         <ul className="bullets">
           <li className="list-item">An improved response time</li>
@@ -434,12 +486,28 @@ const SectionOne = ({ title, id }) => {
         </ul>
         <p>
           Improved response time comes from the fact that CDNs have edge
-          locations closer to the end user. In many cases CDNs can reduce
-          latencies by 100’s of ms. Traffic is routed to the nearest edge
-          location, improving the distribution of assets to traffic globally.
-          Relative to using servers, CDNs are also easier to scale due to the
-          ease at which edge locations can be added and removed from a system.
-          As a result, increases in traffic are handled better.
+          locations closer to the end user.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">5</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="Why Use a CDN? Here Are 10 Data-Driven Reasons"
+                organization="keycdn"
+                date="March 4, 2019"
+                author="Brian Jackson"
+              ></Card>
+            </Popup>
+          </span>
+          In many cases CDNs can reduce latencies by 100’s of ms. Traffic is
+          routed to the nearest edge location, improving the distribution of
+          assets to traffic globally. Relative to using servers, CDNs are also
+          easier to scale due to the ease at which edge locations can be added
+          and removed from a system. As a result, increases in traffic are
+          handled better.
         </p>
         <p>
           CDNs also have high reliability. If an edge location goes down, a user
@@ -540,7 +608,21 @@ const SectionOne = ({ title, id }) => {
         <p>
           To manage a website that is frequently updated, the JAMstack community
           has established best practices when it comes to deploying JAMstack
-          sites. These elements are part of what is called “The JAMstack Way”:
+          sites.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">1</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="Jamstack Best Practices"
+                organization="Jamstack"
+              ></Card>
+            </Popup>
+          </span>
+          These elements are part of what is called “The JAMstack Way”:
         </p>
         <ul className="bullets">
           <li className="list-item">Version control</li>
