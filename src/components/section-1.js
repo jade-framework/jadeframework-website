@@ -74,8 +74,9 @@ const SectionOne = ({ title, id }) => {
           Most web apps these days are able to serve dynamic content, using an
           architecture we refer to as the standard web app architecture.
           Standard web apps use application servers and databases, which
-          together are responsible for two main tasks: <b>managing data</b> and
-          <b>other business logic</b>.
+          together are responsible for two main tasks:
+          <span className="emphasize">managing data</span> and
+          <span className="emphasize">other business logic</span>.
         </p>
         <Image imageAlt="web app architecture" imageName="svgs/5.svg" />
         <p>
@@ -86,7 +87,7 @@ const SectionOne = ({ title, id }) => {
           id={`subtitle-${sectionNumber}-2`}
           data-title={`Subtitle ${sectionNumber}-2`}
         >
-          {`${sectionNumber}.2 Building web pages`}
+          {`${sectionNumber}.2 Serving content from a traditional architecture`}
         </h3>
         <h4
           id={`subtitle-${sectionNumber}-2-1`}
@@ -95,14 +96,13 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.2.1 How web pages are served`}
         </h4>
         <p>
-          When a client makes a GET request to the web server, the web server
-          sends back a text file, usually of the type ".html", in the response.
-          If the site is a simple webpage consisting of only an HTML file then
-          the request/response stage is complete. Most webpages, however, have
-          additional resources such as CSS files, JavaScript files, and images.
-          The client will parse the HTML file looking for any referenced
-          resources and, if found, will make additional requests for those
-          resources.
+          A web server sends back a text file, usually of the type ".html", in
+          response to a client GET request. If the site is a simple web page
+          consisting of only an HTML file, then the request/response stage is
+          complete. Most web pages, however, have additional resources such as
+          CSS files, JavaScript files, and images. The client will parse the
+          HTML file looking for any referenced resources. If found, the client
+          will make additional requests for those resources.
           <span className="span-wrapper">
             <Popup
               trigger={<span className="superscript">2</span>}
@@ -119,7 +119,7 @@ const SectionOne = ({ title, id }) => {
             </Popup>
           </span>
           Once the browser has all the files the final page will be rendered for
-          the user to view. As such, the web page is always built following each
+          the user to view. It's important to note that web pages are built on
           request from the client.
         </p>
         <Slider {...settings}>
@@ -140,50 +140,79 @@ const SectionOne = ({ title, id }) => {
             </p>
           </div>
         </Slider>
-        <p>
-          The multiple requests made in order to receive the HTML file and all
-          supporting/referenced assets can add to network latency. Moreover, In
-          some cases the client will build and render the page only if it has
-          all the necessary files. Instead, if the server can pre-build files
-          ahead of time, it would greatly benefit both end users and developers.
-        </p>
         <h4
           id={`subtitle-${sectionNumber}-2-2`}
           data-title={`Subtitle ${sectionNumber}-2-2`}
         >
-          {`${sectionNumber}.2.2 Building web pages`}
+          {`${sectionNumber}.2.2 How web pages are dynamically built`}
         </h4>
         <p>
-          When it comes to static pages, content can be pre-populated on the
-          server-side as previously mentioned. This allows pages to load faster
-          on the browser.
-        </p>
-        <p>
-          For dynamic content, pages are built client-side as data is being
-          processed and populated by the application server. This results in a
-          delay loading the pages.
+          Dynamic content is usually built on the client-side. On an initial GET
+          request, the web server sends the client a skeleton HTML template
+          which will be populated with data on AJAX requests. This results in a
+          delay loading the page as data is being processed by the app server.
         </p>
         <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
-        <p className="slide-caption">
-          The app server dynamically builds pages at runtime
+        <p className="slide-caption">Dynamic content is built at runtime</p>
+        <h4
+          id={`subtitle-${sectionNumber}-2-3`}
+          data-title={`Subtitle ${sectionNumber}-2-3`}
+        >
+          {`${sectionNumber}.2.3 The problem`}
+        </h4>
+        <p>Two architectures have been introduced so far:</p>
+        <ul className="bullets">
+          <li className="list-item">Traditional web site architecture</li>
+          <li className="list-item">Traditional web app architecture</li>
+        </ul>
+        <p>
+          The traditional web site architecture is able to serve static content
+          which is fast to load. However to serve dynamic content requires the
+          traditional web app architecture. Dynamic content can be served using
+          the traditional web app architecture but the trade-off is performance.
+          Web pages take longer to load due to data processing and other backend
+          processing that occurs. Also, to support dynamic content requires the
+          developer to managage backend infrastructure.
         </p>
         <p>
-          To counter the load delay, developers can pre-build pages in order to
-          receive the same benefits as server-side rendering.
+          Web page speed, the time it takes to fully display content on a page,
+          is an important factor to consider. Almost 50% of users expect a web
+          page to load within 2 seconds and if a page takes longer than 3
+          seconds to load, 53% of users will abandon the site.
+          <span className="span-wrapper">
+            <Popup
+              trigger={<span className="superscript">6</span>}
+              position="bottom center"
+              on={["hover", "focus"]}
+              arrow={"bottom center" !== "center center"}
+            >
+              <Card
+                title="How Page Speed Affects SEO & Google Rankings | The 2020 Page Speed Guide"
+                author="Adrian Cojocariu"
+                organization="CognitiveSEO"
+              ></Card>
+            </Popup>
+          </span>
+        </p>
+        <p>
+          Web page speed is also a criteria for search engine optimizations.
+          Google and other search engines take into account web page speeds for
+          their search rankings.
         </p>
         <h4
           id={`subtitle-${sectionNumber}-2-3`}
           data-title={`Subtitle ${sectionNumber}-2-3`}
         >
-          {`${sectionNumber}.2.3 Pre-building pages before serving`}
+          {`${sectionNumber}.2.3 Pre-building pages to improve load time`}
         </h4>
         <p>
-          Pre-building files is a technique where content is assembled ahead of
-          time, usually on the server-side. When a client request comes in, the
-          server can respond with these pre-built web files which includes the
-          HTML file and all referenced static assets. This allows the client to
-          avoid retrieving additional static assets with other requests, leading
-          to the following benefits:
+          A very specific criteria of web pages can be pre-built in order to
+          decrease load times. Pre-building is a technique where content is
+          assembled ahead of time, usually on the server-side. When a client
+          request comes in, the server can respond with these pre-built web
+          files which includes the HTML file and all referenced static assets.
+          This allows the client to avoid retrieving additional static assets
+          with other requests, leading to the following benefits:
         </p>
         <ul className="bullets">
           <li className="list-item">
@@ -196,6 +225,10 @@ const SectionOne = ({ title, id }) => {
           </li>
         </ul>
         <Image imageAlt="pre-building pages" imageName="svgs/9.svg" />
+        <p>
+          Not all web pages can be pre-built ahead of time. Only web pages that
+          can source data at build time are great candidates for this technique.
+        </p>
         <h4
           id={`subtitle-${sectionNumber}-2-4`}
           data-title={`Subtitle ${sectionNumber}-2-4`}
@@ -227,19 +260,20 @@ const SectionOne = ({ title, id }) => {
           </li>
         </ul>
         <p>
-          The most important step here is the <em>compile</em> step, which
-          involves applying data/content to the right templates in order to
-          generate static HTML. By compiling the data ahead of time, there is no
-          need for server-side processing, which can be time-consuming. This
-          allows files to be pre-built as the data has already been
-          incorporated, allowing content to be delivered faster to end users.
+          The most important step here is the
+          <span className="emphasize"> compile</span> step, which involves
+          applying data/content to the right templates in order to generate
+          static HTML. By compiling the data ahead of time, there is no need for
+          server-side processing, which can be time-consuming. This allows files
+          to be pre-built as the data has already been incorporated, allowing
+          content to be delivered faster to end users.
         </p>
         <Image imageAlt="SSGs" imageName="svgs/10.svg" />
         <h3
           id={`subtitle-${sectionNumber}-3`}
           data-title={`Subtitle ${sectionNumber}-3`}
         >
-          {`${sectionNumber}.3 Change in architecture`}
+          {`${sectionNumber}.3 New architecture for certain use cases`}
         </h3>
         <h4
           id={`subtitle-${sectionNumber}-3-1`}
@@ -320,8 +354,10 @@ const SectionOne = ({ title, id }) => {
           particularly suited to applications that can source data and pre-build
           pages before runtime. This term was coined by the CEO of Netlify,
           Mathias Billmann, who refers to it as a "modern web development
-          architecture based on client-side <b>JavaScript</b>, reusable
-          <b>APIs</b>, and prebuilt <b>Markup</b>.
+          architecture based on client-side
+          <span className="emphasize"> JavaScript</span>, reusable
+          <span className="emphasize"> APIs</span>, and prebuilt
+          <span className="emphasize"> Markup</span>."
         </p>
         <table id="jam-table">
           <tbody>

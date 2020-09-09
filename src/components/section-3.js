@@ -353,6 +353,12 @@ const SectionThree = ({ title, id }) => {
               "https://www.keycdn.com/blog/why-use-a-cdn"
             )}
           </li>
+          <li className="list-item">
+            {createAnchor(
+              "How Page Speed Affects SEO & Google Rankings | The 2020 Page Speed Guide",
+              "https://cognitiveseo.com/blog/22865/page-speed-seo/#4"
+            )}
+          </li>
         </ol>
         <h4
           id={`subtitle-${sectionNumber + 2}-2`}

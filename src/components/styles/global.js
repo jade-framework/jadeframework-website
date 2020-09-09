@@ -109,9 +109,13 @@ const GlobalStyles = createGlobalStyle`
     text-align: center;
     font-size: 0.8em;
     margin: auto;
+
+  }
+
   .slick-track {
     display: flex;
   }
+
   .slick-track .slick-slide {
     display: flex;
     height: auto;
@@ -169,7 +173,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .span-wrapper {
-    margin-right: 0.5rem;
+    margin-left: 0.1rem;
+    margin-right: 0.3rem;
   }
 `
 
