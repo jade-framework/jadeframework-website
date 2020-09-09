@@ -542,12 +542,12 @@ const SectionOne = ({ title, id }) => {
           has established best practices when it comes to deploying JAMstack
           sites. These elements are part of what is called “The JAMstack Way”:
         </p>
-        <ul className="bullets">
+        {/* <ul className="bullets">
           <li className="list-item">Version control</li>
           <li className="list-item">Automated builds</li>
           <li className="list-item">Automic deploys</li>
           <li className="list-item">Instant CDN invalidation</li>
-        </ul>
+        </ul> */}
         <Image imageAlt="JAMstack best practices" imageName="svgs/22.svg" />
         <p>
           All source code should live on a Git repository. The developer should
