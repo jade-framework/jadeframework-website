@@ -100,6 +100,16 @@ const GlobalStyles = createGlobalStyle`
     bottom: 0px;
   }
 
+  .slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
   .superscript { 
     position: relative; 
     top: -0.5em; 

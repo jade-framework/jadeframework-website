@@ -55,8 +55,9 @@ const Article = styled.article`
     line-height: 1.4rem;
     text-align: justify;
   }
-  & ul.bullets {
+  & ul {
     margin-left: 3rem;
+    margin-bottom: 1rem;
   }
   & ol {
     counter-reset: list-counter;
@@ -73,7 +74,7 @@ const Article = styled.article`
   & ul.bullets li::before {
     content: "•";
     padding-right: 1ch;
-    color: var(--color-claret);
+    color: var(--color-jade);
   }
   & ol li {
     counter-increment: list-counter;
