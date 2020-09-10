@@ -74,7 +74,7 @@ const SectionUsage = ({ title, id }) => {
             <td>
               <code>jade delete {`<app name>`}</code>
             </td>
-            <td>Remove an app from the JAMstack</td>
+            <td>Remove an app and its associated AWS infrastructure</td>
           </tr>
           <tr>
             <td>
