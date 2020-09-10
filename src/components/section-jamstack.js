@@ -34,7 +34,7 @@ const SectionJamstack = ({ title, id }) => {
           JAMstack,{" "}
           <Link
             activeClass="active"
-            to="section-2"
+            to="section-launch"
             spy={true}
             smooth={true}
             offset={-270}
@@ -180,20 +180,6 @@ const SectionJamstack = ({ title, id }) => {
           important metric for their search rankings.
         </p>
 
-        <h4
-          id={`subtitle-${sectionNumber}-2-4`}
-          data-title={`Subtitle ${sectionNumber}-2-4`}
-        >
-          {`${sectionNumber}.2.4 Prelude to a different architecture`}
-        </h4>
-        <p>
-          It's obvious that modern web applications require the ability to
-          source data, build pages and serve these pages to clients. So let's
-          now take a look at how we could potentially modify the architecture to
-          retain this ability yet mitigate the associated tradeoffs in
-          performance, security and scalability.
-        </p>
-
         <h3
           id={`subtitle-${sectionNumber}-3`}
           data-title={`Subtitle ${sectionNumber}-3`}
@@ -206,27 +192,14 @@ const SectionJamstack = ({ title, id }) => {
         >
           {`${sectionNumber}.3.1 Building pages pre-runtime`}
         </h4>
-        <p></p>
         <p>
-          Certain web pages are able to source data at build time. Those that
-          meet this criteria can pre-build their pages which is a technique
-          where content is assembled ahead of time, usually on the server-side.
-          When a client request comes in, the server can respond with these
-          pre-built web files which includes the HTML file and all referenced
-          static assets. This allows the client to avoid retrieving additional
-          static assets with other requests, leading to the following benefits:
+          It's obvious that modern web applications require the ability to
+          source data, build pages and serve these pages to clients. So let's
+          now take a look at how we could potentially modify the architecture to
+          retain this ability yet mitigate the associated tradeoffs in
+          performance, security and scalability by sourcing data and building
+          pages before runtime.
         </p>
-        <ul className="bullets">
-          <li className="list-item">
-            For end users, pages load faster as there is less client-side
-            rendering
-          </li>
-          <li className="list-item">
-            For developers, fewer network calls are sent to the web server,
-            reducing load and improving scalability
-          </li>
-        </ul>
-        <Image imageAlt="pre-building pages" imageName="svgs/9.svg" />
         <h4
           id={`subtitle-${sectionNumber}-3-2`}
           data-title={`Subtitle ${sectionNumber}-3-2`}
@@ -234,84 +207,85 @@ const SectionJamstack = ({ title, id }) => {
           {`${sectionNumber}.3.2 Static site generators`}
         </h4>
         <p>
-          A popular tool for pre-building web pages are static site generators
-          (SSGs). Popular examples of SSGs include Hugo, Jekyll, and Gatsby.
-          Generally, SSGs convert source code and data into pre-built files.
-          SSGs build files in four major processes:
+          Static site generators ("SSGs") are a tool, the main purpose of which
+          is to source content, apply that content to templates and generate web
+          pages. Popular examples of SSGs include Hugo, Jekyll, and Gatsby.
         </p>
+        <p>SSGs generally apply 4 processes:</p>
         <ul className="bullets">
           <li className="list-item">
-            Compile - Creating new files for any data/content sourced from a CMS
+            Compile: Souce content and generate pages
           </li>
           <li className="list-item">
-            Minify - Reduce the size of files by performing code optimizations.
+            Minify: Reduce the size of files by performing code optimizations.
             This includes removing unnecessary white space and comments as well
             as shortening variable names
           </li>
           <li className="list-item">
-            Transpile - Convert ES6+ code to ES5 in order to remain compatible
+            Transpile: Convert ES6+ code to ES5 in order to remain compatible
             with all major modern web browsers
           </li>
           <li className="list-item">
-            Bundle - Combine one or more resources such as HTML files,
-            JavaScript files, stylesheets, and images into a single file
+            Bundle: Combine one or more resources such as HTML files, JavaScript
+            files, stylesheets, and images into a single file
           </li>
         </ul>
-        <p>
-          The most important step here is the
-          <span className="emphasize"> compile</span> step, which involves
-          applying data/content to the right templates in order to generate
-          static HTML. By compiling the data ahead of time, there is no need for
-          server-side processing, which can be time-consuming. This allows files
-          to be pre-built as the data has already been incorporated, allowing
-          content to be delivered faster to end users.
-        </p>
         <Image imageAlt="SSGs" imageName="svgs/10.svg" />
+        <p>
+          The main goal of this process is to generate pages in advance and
+          eliminate the need for an application server to dynamically build
+          pages at runtime.
+        </p>
         <h4
           id={`subtitle-${sectionNumber}-3-3`}
           data-title={`Subtitle ${sectionNumber}-3-3`}
         >
-          {`${sectionNumber}.3.3 Taking advantage of pre-built pages`}
+          {`${sectionNumber}.3.3 Advantages of pre-building pages`}
         </h4>
         <p>
-          Pre-building web pages can actually open up changes in the standard
-          web app architecture. While web servers are great at serving static
-          content, whether individual files or pre-built files, they are not the
-          only infrastructure available to do so. Content delivery networks
-          (CDNs) can also serve files. In fact, there are significant advantages
-          to serving static files from CDNs over web servers, which are
-          discussed in section 3.5.1.
+          The most significant result of building pages pre-runtime is the
+          inherent decoupling of the request process from the build process. The
+          overhead of generating pages now becomes unrelated to site traffic and
+          is rather handled independently.
         </p>
         <p>
-          If all static assets can be served from a CDN then it is possible to
-          substitute the web server out of the standard architecture. Requests
-          for dynamic content would instead be sent straight to an application
-          server from the client. The architecture now involves a CDN, an
-          application server, and a database.
+          The elimimation of dynamic builds at runtime also addresses the three
+          issues we previously discused, namely:
         </p>
-        <Image
-          imageAlt="replacing web server with CDN"
-          imageName="svgs/12.svg"
-        />
+        <ul className="bullets">
+          <li className="list-item">
+            Performance: The entire site can be served directly from a web
+            server or Content Delivery Network ("CDN") without any holdup due to
+            building pages at request time
+          </li>
+          <li className="list-item">
+            Scalability: Since the process of compiling pages has been decoupled
+            from the request/response cycle, the need to scale application
+            servers and related infrastructure in reponse to site traffic is
+            elmiinated. The entire site can be served via a CDN, which is
+            inherently optimized to scale.
+          </li>
+          <li className="list-item">
+            Security: Removing infrastructure from the runtime equation and
+            serving pre-built static pages from a CDN removes the majority of
+            malicious attack vectors.
+          </li>
+        </ul>
         <h4
           id={`subtitle-${sectionNumber}-3-4`}
           data-title={`Subtitle ${sectionNumber}-3-4`}
         >
-          {`${sectionNumber}.3.4 Transitioning to a serverless model`}
+          {`${sectionNumber}.3.4 Static web apps with dynamic functionality`}
         </h4>
         <p>
-          It is possible to take this one step further. For standard web apps,
-          the application server and database are responsible for providing
-          dynamic functionality, particularly managing data and handling other
-          business logic. To transition to a serverless model, this
-          functionality can be abstracted in two ways:
+          Since we're suggesting an architecture that pre-builds the entire web
+          application and serves it as static assets from a CDN, how do we
+          implement dynamic functionality at runtime? In the standard web app
+          architecture the application server and database are responsible for
+          providing dynamic functionality. To transition to a serverless model,
+          this functionality can be abstracted to APIs and serverless functions.
         </p>
-        <ul className="bullets">
-          <li className="list-item">Data can be managed through APIs</li>
-          <li className="list-item">
-            Business logic can be handled using serverless functions
-          </li>
-        </ul>
+
         <Image
           imageAlt="Replacing app server and database with APIs and FaaS"
           imageName="svgs/13.svg"
@@ -319,13 +293,13 @@ const SectionJamstack = ({ title, id }) => {
         <p>
           In this serverless model, the client is now responsible for dynamic
           functionality, instead of the application server as before, and
-          achieves this by making API calls and invoking serverless functions.
-          This is most often accomplished using JavaScript on the browser at
-          runtime.
+          achieves this by making API calls and invoking serverless functions
+          using JavaScript in the browser at runtime.
         </p>
         <p>
-          By making this transition, we have moved into a web app architecture
-          commonly known as the JAMstack architecture.
+          This simplified architecture where pre-built sites are served directly
+          from a CDN and dynamic functionality is abstracted to APIs and
+          serverless functions is commonly known as the JAMstack architecture.
         </p>
         <Image imageAlt="JAMstack architecture" imageName="svgs/15.svg" />
         <h3
