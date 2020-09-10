@@ -431,34 +431,24 @@ const SectionJamstack = ({ title, id }) => {
           {`${sectionNumber}.4.2 High level view of the JAMstack`}
         </h4>
         <p>
-          Having replaced the web server with the CDN, and the application
-          server with APIs and serverless functions, the JAMstack is essentially
-          a serverless architecture. It's important to note that this does not
+          Having replaced the web server with a CDN, and the application server
+          with APIs and serverless functions, the JAMstack is essentially a
+          serverless architecture. It's important to note that this does not
           replace the need for servers entirely, since any custom APIs will
-          continue to rely on servers. The main difference is that JAMstack
-          development can carry on without concern for the maintenance of those
-          servers.
+          continue to rely on servers.
         </p>
         <Image
           imageAlt="web app architecture & jamstack architecture"
           imageName="svgs/16.svg"
         />
-        <h4
-          id={`subtitle-${sectionNumber}-4-3`}
-          data-title={`Subtitle ${sectionNumber}-4-3`}
-        >
-          {`${sectionNumber}.4.3 Understanding the paradigm shift`}
-        </h4>
         <p>
-          Now that the client is responsible for all content, the paradigm shift
-          is that the client, not the server, has become the orchestrator of
-          static and dynamic content. This results in a decoupling of the
-          frontend and backend roles from each other, providing clear separation
-          of responsibilities for developers. Previously, a web app developer
-          would have had to pay significant attention to the server’s
-          capabilities in order to get a web app running. Now, a frontend
-          developer can simply call an API for data management, while a backend
-          developer can focus on optimizing the API.
+          As a result of the decoupling of the frontend and backend, essentially
+          the client, not the server, has now become the orchestrator of dynamic
+          functionality. There is a clear separation of responsibilities for
+          developers. Frontend developers can focus on building their
+          application, calling an APIs for data management and other
+          functionality while the maintenance and optimization of those APIs is
+          handled separately.
         </p>
         <h3
           id={`subtitle-${sectionNumber}-5`}
@@ -481,15 +471,12 @@ const SectionJamstack = ({ title, id }) => {
           imageName="svgs/17.svg"
         />
         <p>
-          All JAMstack sites serve static content directly from a CDN, with as
-          much of the site pre-built before being uploaded to the CDN.
-        </p>
-        <p>
-          The use of CDNs to serve pre-built files has significant advantages
-          some of which are:
+          JAMstack sites serve pre-built, static sites directly from a CDN. The
+          use of CDNs to serve pre-built sites comes with significant
+          advantages, including:
         </p>
         <ul className="bullets">
-          <li className="list-item">An improved response time</li>
+          <li className="list-item">Improved response time</li>
           <li className="list-item">Easier scalability</li>
           <li className="list-item">Reduced surface area for attacks</li>
           <li className="list-item">Lower maintenance requirements</li>
@@ -512,18 +499,17 @@ const SectionJamstack = ({ title, id }) => {
               ></Card>
             </Popup>
           </span>
-          In many cases CDNs can reduce latencies by 100’s of ms. Traffic is
+          In many cases CDNs can reduce latency by 100’s of ms. Traffic is
           routed to the nearest edge location, improving the distribution of
           assets to traffic globally. Relative to using servers, CDNs are also
           easier to scale due to the ease at which edge locations can be added
-          and removed from a system. As a result, increases in traffic are
-          handled better.
+          and removed from a system.
         </p>
         <p>
-          CDNs also have high reliability. If an edge location goes down, a user
+          CDNs are also highly reliable. If an edge location goes down, a user
           will be routed to the next closest location. Additionally, the use of
           CDNs over web servers reduces the risk of attacks. Web servers are
-          often the target of malpractice such as DDoS or hacking attempts. This
+          often the target of attacks such as DDoS or hacking attempts. This
           often requires security precautions and regular maintenance. Regarding
           maintenance, the use of CDNs allow developers to focus solely on their
           logic and not infrastructure as CDNs are owned by large corporations
@@ -537,22 +523,17 @@ const SectionJamstack = ({ title, id }) => {
         </h4>
         <p>
           In standard web app architectures, application servers are responsible
-          for managing data and handling other business logic. Data management
-          can be abstracted into APIs, allowing the client to be the coordinator
-          of such data.
+          for managing data and handling other business logic. In the JAMstack
+          architecture, services are abstracted into APIs, allowing the client
+          to be the coordinator of such data.
         </p>
         <Image imageAlt="APIs in JAMstack" imageName="svgs/18.svg" />
         <p>
-          A developer can use first-party and/or third-party APIs. A first-party
-          API allows the developer to control all aspects of the API lifecycle
-          from design to implementation which can be useful for fitting the
-          needs of the product or security purposes. In situations where this is
-          not a concern, developers may use third-party APIs. Nowadays, there
-          are countless 3rd-party services providing functionality for common
-          tasks such as payments, search, and scheduling, amongst many others.
-          Using third-party APIs allows developers to save time by implementing
-          functionality already created by others, allowing the developer to
-          focus on the core needs of their web app.
+          The developer is free to build their own APIs or utilize the huge
+          ecosystem of 3rd-party services that exist today. Using third-party
+          APIs allows developers to save time by implementing functionality
+          already created by others and focus on the core needs of their web
+          app.
         </p>
         <Image imageAlt="Serverless functions" imageName="svgs/19.svg" />
         <p>
@@ -560,11 +541,6 @@ const SectionJamstack = ({ title, id }) => {
           used in place of servers to manage other business logic. FaaS are
           useful when APIs and frontend logic alone are not capable of replacing
           all business logic once handled by the application server.
-          Additionally, some tasks need to be performed from a secure location
-          and not from the client-side, in which case FaaS can prove useful.
-          Some common use cases for serverless functions are user
-          authentication, form validation and submission, as well as triggering
-          events.
         </p>
         <h4
           id={`subtitle-${sectionNumber}-5-3`}
@@ -572,15 +548,6 @@ const SectionJamstack = ({ title, id }) => {
         >
           {`${sectionNumber}.5.3 Use case for the JAMstack`}
         </h4>
-        <p>
-          The JAMstack architecture is not necessarily the ideal architecture
-          for all websites. Certain functionality, such as real time chat, is
-          not suited for a JAMstack app. Similarly, use cases such as websites
-          for internal teams are not likely to benefit from using a CDN and
-          serverless model. The JAMstack architecture works best for sites which
-          can source data at build time in order to create pre-built files,
-          therefore leading to many of the advantages discussed.
-        </p>
         <h3
           id={`subtitle-${sectionNumber}-6`}
           data-title={`Subtitle ${sectionNumber}-6`}
@@ -594,20 +561,17 @@ const SectionJamstack = ({ title, id }) => {
           {`${sectionNumber}.6.1 JAMstack at a minimum`}
         </h4>
         <p>
-          Launching an application that follows the JAMstack architecture, at
-          its most simplest, takes only 3 steps to get up and running.
+          Launching an application utilizing the JAMstack architecture, at its
+          most simplest, takes only 3 steps:
         </p>
         <Image
           imageAlt="steps to deploy a JAMstack site"
           imageName="svgs/21.svg"
         />
         <p>
-          With this, JAMstack developers can serve their sites to their end
-          users. However, these steps are best suited for JAMstack sites that do
-          not require frequent updates. If a developer is planning to update
-          their sites often, then it becomes necessary to introduce additional
-          steps in order to avoid manually repeating the build and deploy steps
-          for each update.
+          However, the JAMstack community has also established additional best
+          practices in regards to deploying and maintaining applications to
+          improve developer experience.
         </p>
         <h4
           id={`subtitle-${sectionNumber}-6-2`}
@@ -616,9 +580,7 @@ const SectionJamstack = ({ title, id }) => {
           {`${sectionNumber}.6.2 The JAMstack way`}
         </h4>
         <p>
-          To manage a website that is frequently updated, the JAMstack community
-          has established best practices when it comes to deploying JAMstack
-          sites.
+          These elements are part of what is called “The JAMstack Way”
           <span className="span-wrapper">
             <Popup
               trigger={<span className="superscript">1</span>}
@@ -632,26 +594,21 @@ const SectionJamstack = ({ title, id }) => {
               ></Card>
             </Popup>
           </span>
-          These elements are part of what is called “The JAMstack Way”:
+          :
         </p>
         <Image imageAlt="JAMstack best practices" imageName="svgs/22.svg" />
         <p>
-          All source code should live on a Git repository. The developer should
-          be able to see the version history of the code. In addition, version
-          control providers such as GitHub provide webhook functionality that
-          notifies other applications whenever an update to the source code is
-          made.
+          All source code should live in a git repository and webhooks can be
+          utilized to notify the build process to be initiated on each source
+          code update.
         </p>
         <p>
-          Automated builds allow web pages to be pre-built each time there is a
-          new update. When new commits are made, a webhook is sent to a build
-          server which triggers a chain of events. The build server will source
-          the Git repo and any data/content from a content management system.
-          The server then invokes the appropriate build commands for the SSG of
-          choice, allowing pre-built pages to be created.
+          When new commits are made to the git repository, a webhook can be sent
+          to a build server which triggers a static site generator to start the
+          build process.
         </p>
         <p>
-          When pages are built, they should only be deployed if all the pages
+          Once pages are built, they should only be deployed if all the pages
           were built successfully. This is known as an atomic deploy - each
           deployment is self-contained, and should a build fail, the build
           process is completely rolled back. There are two major benefits with
@@ -662,9 +619,9 @@ const SectionJamstack = ({ title, id }) => {
         </p>
         <p>
           Finally, instant CDN invalidation ensures that the users are served
-          the most updated web pages. Every time there is a new build, either an
+          the most updated web pages. Every time there is a new build, either a
           FaaS or a server will invalidate the CDN of old files, allowing users
-          to view the latest content
+          to view the latest content.
         </p>
         <Slider {...settings}>
           <div>

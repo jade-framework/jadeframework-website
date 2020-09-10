@@ -27,7 +27,7 @@ const SectionEvolution = ({ num, title, id }) => {
       <p>
         From our research into JaaS providers and our own experience building
         Jade core, we identified several challenges that developers might face
-        and sought to overcome them. These challenges are:
+        and sought to overcome them. These challenges were:
       </p>
       <ul className="bullets">
         <li className="list-item">Supporting multiple developers</li>
