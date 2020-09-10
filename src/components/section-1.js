@@ -8,12 +8,6 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "reactjs-popup/dist/index.css"
 
-const createAnchor = (title, link) => (
-  <a href={link} target="_blank" rel="noreferrer">
-    {title}
-  </a>
-)
-
 const SectionOne = ({ title, id }) => {
   const sectionNumber = 3
   const settings = {
@@ -672,12 +666,6 @@ const SectionOne = ({ title, id }) => {
           </span>
           These elements are part of what is called “The JAMstack Way”:
         </p>
-        {/* <ul className="bullets">
-          <li className="list-item">Version control</li>
-          <li className="list-item">Automated builds</li>
-          <li className="list-item">Automic deploys</li>
-          <li className="list-item">Instant CDN invalidation</li>
-        </ul> */}
         <Image imageAlt="JAMstack best practices" imageName="svgs/22.svg" />
         <p>
           All source code should live on a Git repository. The developer should

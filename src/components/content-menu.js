@@ -5,11 +5,11 @@ import styled from "styled-components"
 
 const Aside = styled.aside`
   position: fixed;
-  top: calc(50% - 3rem);
+  top: calc(50% - 12rem);
   width: 300px;
   opacity: 1;
   transition: 0.2s ease-in-out;
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `
@@ -20,15 +20,14 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-  font-size: 1.1rem;
-  line-height: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.8rem;
   cursor: pointer;
 `
 
 const ListItemLink = styled.a``
 
 const ContentMenu = ({ sections }) => {
-  console.log("sections", sections)
   return (
     <Aside>
       <List>

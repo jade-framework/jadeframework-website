@@ -38,6 +38,8 @@ const GlobalStyles = createGlobalStyle`
     justify-content: flex-start;
   }
   code {
+    background: #f5f2f0;
+    font-size: 0.9rem;
     font-family: var(--font-family-code);
     word-wrap: break-word;
   }
@@ -90,15 +92,17 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold;
   }
 
+  .slick-slide {
+    margin-bottom: 2rem;
+  }
+  
+  .slick-dots {
+    bottom: 1rem;
+  }
+
   .slick-prev:before,
   .slick-next:before {
     color: #00a86b;
-  }
-
-  ul.slick-dots {
-    position: relative;
-    margin: 0.5rem auto 1rem;
-    bottom: 0px;
   }
 
   .slide-caption {
@@ -121,6 +125,10 @@ const GlobalStyles = createGlobalStyle`
     height: auto;
     align-items: center;
     justify-content: center;
+  }
+
+  .slick-dots a {
+    padding: 4px;
   }
 
   .superscript { 
@@ -149,13 +157,45 @@ const GlobalStyles = createGlobalStyle`
   }
 
   table {
-    margin: auto;
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 95%;
+  }
+
+  table tr {
+    border-bottom: 1px solid #bbb;
+    line-height: 1.5rem;
+  }
+
+  table th {
+    font-weight: bold;
+    padding: 4px;
+    text-align: left;
+  }
+
+  table th.doc-command {
+    width: 35%;
+  }
+
+  table th.doc-desc {
+    width: 65%;
+  }
+
+  table td {
+    padding: 4px;
+    text-align: left;
   }
 
   #ssg-table th, #ssg-table td, #jam-table td {
-    border: 1px solid black;
-    padding: 0.9rem;
     text-align: center;
+  }
+
+  #jam-table {
+    width: 60%;
+  }
+
+  #jam-table td {
+    border: 1px solid #bbb;
   }
 
   #jam-table tr:last-child {
@@ -168,6 +208,10 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--color-pomegranate);
   }
 
+  #ssg-table {
+    width: 80%;
+  }
+
   #ssg-table th {
     font-weight: bold;
   }
@@ -176,6 +220,23 @@ const GlobalStyles = createGlobalStyle`
     margin-left: 0.1rem;
     margin-right: 0.3rem;
   }
+  
+  pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #35495e;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
 `
 
 export default GlobalStyles
