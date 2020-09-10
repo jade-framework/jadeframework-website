@@ -97,6 +97,20 @@ const SectionCore = ({ num, title, id }) => {
           <Image imageName="svgs/47.svg" imageAlt="Build Process 4" />
         </div>
       </Slider>
+      <p>
+        During initialization, Jade provides a URL to the developer to add to
+        their Github repository webhook settings so that anytime a commit is
+        pushed to that repository, a webhook is sent to Jade’s EC2 instance and
+        its first stop is the Nginx web server. Nginx ensures the the request is
+        coming in on the correct port and proxies the request to Jade's node
+        server.
+      </p>
+      <p>
+        The node server ensures the request is to the correct route and passes
+        the request to the build logic. Jade then pulls the master branch of the
+        repository from Github and checks to see if it has changed since the
+        last build and if so, initiates the build process.
+      </p>
       <h4>{num}.1.3 Examining the build process</h4>
       <p>
         Once the build process has been initiated, Jade uses the user
