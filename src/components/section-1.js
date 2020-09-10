@@ -212,6 +212,7 @@ const SectionOne = ({ title, id }) => {
         >
           {`${sectionNumber}.3.1 Building pages pre-runtime`}
         </h4>
+        <p></p>
         <p>
           Certain web pages are able to source data at build time. Those that
           meet this criteria can pre-build their pages which is a technique
