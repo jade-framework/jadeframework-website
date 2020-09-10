@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "reactjs-popup/dist/index.css"
 
-const SectionOne = ({ title, id }) => {
+const SectionJamstack = ({ title, id }) => {
   const sectionNumber = 3
   const settings = {
     customPaging: index => {
@@ -712,4 +712,4 @@ const SectionOne = ({ title, id }) => {
   )
 }
 
-export default SectionOne
+export default SectionJamstack
