@@ -176,6 +176,8 @@ const GlobalStyles = createGlobalStyle`
     margin-left: 0.1rem;
     margin-right: 0.3rem;
   }
+
+  .slick-slider { width: 1px; min-width: 100%; *width: 100%; }
 `
 
 export default GlobalStyles
