@@ -58,13 +58,13 @@ const SectionJamstack = ({ title, id }) => {
         </h4>
         <p>
           Originally, web sites consisted of static assets (HTML, CSS,
-          JavaScript) served by a web server directly to the client.
+          JavaScript) which clients requested from the web server.
         </p>
         <Image imageAlt="static website architecture" imageName="svgs/4.svg" />
         <p>
           The simple nature of these web sites allowed for a simple architecture
           but this simple architecture meant limited functionality. Every user
-          saw the same static pages and there was non way to dynamically source
+          saw the same static pages and there was no way to dynamically source
           content.
         </p>
         <h4
@@ -106,7 +106,8 @@ const SectionJamstack = ({ title, id }) => {
           <div>
             <Image imageAlt="initial request" imageName="svgs/6.svg" />
             <p className="slide-caption">
-              On the inititial GET request the web server returns an HTML file
+              1. On the inititial GET request the web server returns an HTML
+              file
             </p>
           </div>
           <div>
@@ -115,8 +116,8 @@ const SectionJamstack = ({ title, id }) => {
               imageName="svgs/7.svg"
             />
             <p className="slide-caption">
-              Additional GET requests are made for any resources referenced in
-              the HTML file
+              2. Additional GET requests are made for any resources referenced
+              in the HTML file
             </p>
           </div>
         </Slider>
@@ -132,7 +133,12 @@ const SectionJamstack = ({ title, id }) => {
           server, which will reach out to that data source, dynamically build
           pages, and send them back to the client.
         </p>
-        <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
+        <div>
+          <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
+          <p className="slide-caption">
+            3. Serving dynamic content involves the app server
+          </p>
+        </div>
         <h4
           id={`subtitle-${sectionNumber}-2-3`}
           data-title={`Subtitle ${sectionNumber}-2-3`}
@@ -176,7 +182,7 @@ const SectionJamstack = ({ title, id }) => {
               ></Card>
             </Popup>
           </span>
-          In addtion, Google and other search engines consider performance an
+          In addition, Google and other search engines consider performance an
           important metric for their search rankings.
         </p>
 
@@ -207,27 +213,29 @@ const SectionJamstack = ({ title, id }) => {
           {`${sectionNumber}.3.2 Static site generators`}
         </h4>
         <p>
-          Static site generators ("SSGs") are a tool, the main purpose of which
-          is to source content, apply that content to templates and generate web
+          Static site generators (SSGs) are a tool, the main purpose of which is
+          to source content, apply that content to templates, and generate web
           pages. Popular examples of SSGs include Hugo, Jekyll, and Gatsby.
         </p>
         <p>SSGs generally apply 4 processes:</p>
         <ul className="bullets">
           <li className="list-item">
-            Compile: Souce content and generate pages
+            <span className="strong">Compile</span>: Souce content and generate
+            pages
           </li>
           <li className="list-item">
-            Minify: Reduce the size of files by performing code optimizations.
-            This includes removing unnecessary white space and comments as well
-            as shortening variable names
+            <span className="strong">Minify</span>: Reduce the size of files by
+            performing code optimizations. This includes removing unnecessary
+            white space and comments as well as shortening variable names
           </li>
           <li className="list-item">
-            Transpile: Convert ES6+ code to ES5 in order to remain compatible
-            with all major modern web browsers
+            <span className="strong">Transpile</span>: Convert ES6+ code to ES5
+            in order to remain compatible with all major modern web browsers
           </li>
           <li className="list-item">
-            Bundle: Combine one or more resources such as HTML files, JavaScript
-            files, stylesheets, and images into a single file
+            <span className="strong">Bundle</span>: Combine one or more
+            resources such as HTML files, JavaScript files, stylesheets, and
+            images into a single file
           </li>
         </ul>
         <Image imageAlt="SSGs" imageName="svgs/10.svg" />
@@ -250,19 +258,19 @@ const SectionJamstack = ({ title, id }) => {
         </p>
         <p>
           The elimimation of dynamic builds at runtime also addresses the three
-          issues we previously discused, namely:
+          issues we previously discussed, namely:
         </p>
         <ul className="bullets">
           <li className="list-item">
             Performance: The entire site can be served directly from a web
-            server or Content Delivery Network ("CDN") without any holdup due to
+            server or Content Delivery Network (CDN) without any hold up due to
             building pages at request time
           </li>
           <li className="list-item">
             Scalability: Since the process of compiling pages has been decoupled
             from the request/response cycle, the need to scale application
             servers and related infrastructure in reponse to site traffic is
-            elmiinated. The entire site can be served via a CDN, which is
+            elminated. The entire site can be served via a CDN, which is
             inherently optimized to scale.
           </li>
           <li className="list-item">
@@ -292,9 +300,9 @@ const SectionJamstack = ({ title, id }) => {
         />
         <p>
           In this serverless model, the client is now responsible for dynamic
-          functionality, instead of the application server as before, and
-          achieves this by making API calls and invoking serverless functions
-          using JavaScript in the browser at runtime.
+          functionality, instead of the application server as before. This is
+          achieved by making API calls and invoking serverless functions using
+          JavaScript in the browser at runtime.
         </p>
         <p>
           This simplified architecture where pre-built sites are served directly
@@ -338,7 +346,7 @@ const SectionJamstack = ({ title, id }) => {
           </tbody>
         </table>
         <p>
-          Being used in nearly 97% of all websites on the internet JavaScript
+          Being used in nearly 97% of all websites on the internet, JavaScript
           and its rich ecosystem of resources has grown to be highly adept at
           handling all types of dynamic functionality needed at runtime.
           <span className="span-wrapper">
@@ -361,9 +369,9 @@ const SectionJamstack = ({ title, id }) => {
         <p>
           For standard web apps, servers are used to provide dynamic
           functionality. In the JAMstack, server side operations are abstracted
-          into reusable APIs which can be either 3rd-party APIs, custom APIs or
-          serverless functions. These are typically accessed by the client over
-          HTTPS using JavaScript.
+          into serverless functions and reusable APIs which can be either
+          3rd-party APIs or custom APIs. These are typically accessed by the
+          client over HTTPS using JavaScript.
         </p>
         <p>
           Markup is pre-built at build time, and is often compiled with a static
@@ -424,8 +432,8 @@ const SectionJamstack = ({ title, id }) => {
         </h4>
         <p>
           Having replaced the web server with the CDN, and the application
-          server with APIs alongside serverless functions, the JAMstack is
-          essentially a serverless architecture. As mentioned, this does not
+          server with APIs and serverless functions, the JAMstack is essentially
+          a serverless architecture. It's important to note that this does not
           replace the need for servers entirely, since any custom APIs will
           continue to rely on servers. The main difference is that JAMstack
           development can carry on without concern for the maintenance of those
@@ -498,9 +506,9 @@ const SectionJamstack = ({ title, id }) => {
             >
               <Card
                 title="Why Use a CDN? Here Are 10 Data-Driven Reasons"
+                author="Brian Jackson"
                 organization="keycdn"
                 date="March 4, 2019"
-                author="Brian Jackson"
               ></Card>
             </Popup>
           </span>
@@ -513,14 +521,13 @@ const SectionJamstack = ({ title, id }) => {
         </p>
         <p>
           CDNs also have high reliability. If an edge location goes down, a user
-          will be routed to the next closest location. The use of CDNs over web
-          servers also reduces the risk of attacks. Web servers are often the
-          target of malpractice such as DDoS or hacking attempts. This often
-          requires security precautions and regular maintenance. Regarding
+          will be routed to the next closest location. Additionally, the use of
+          CDNs over web servers reduces the risk of attacks. Web servers are
+          often the target of malpractice such as DDoS or hacking attempts. This
+          often requires security precautions and regular maintenance. Regarding
           maintenance, the use of CDNs allow developers to focus solely on their
-          logic and not infrastructure. CDNs are owned by large corporations
-          which will be responsible for maintaining and securing CDNs.
-          [https://www.keycdn.com/blog/why-use-a-cdn ]
+          logic and not infrastructure as CDNs are owned by large corporations
+          which will be responsible for maintaining and securing said CDNs.
         </p>
         <h4
           id={`subtitle-${sectionNumber}-5-2`}
@@ -550,13 +557,14 @@ const SectionJamstack = ({ title, id }) => {
         <Image imageAlt="Serverless functions" imageName="svgs/19.svg" />
         <p>
           Serverless functions, or Functions as a Service (FaaS), can also be
-          used in place of servers to manage other business logic. FaaS is
+          used in place of servers to manage other business logic. FaaS are
           useful when APIs and frontend logic alone are not capable of replacing
           all business logic once handled by the application server.
           Additionally, some tasks need to be performed from a secure location
-          and not from the client-side. Some common use cases for serverless
-          functions are user authentication, form validation and submission, as
-          well as triggering events.
+          and not from the client-side, in which case FaaS can prove useful.
+          Some common use cases for serverless functions are user
+          authentication, form validation and submission, as well as triggering
+          events.
         </p>
         <h4
           id={`subtitle-${sectionNumber}-5-3`}
@@ -587,7 +595,7 @@ const SectionJamstack = ({ title, id }) => {
         </h4>
         <p>
           Launching an application that follows the JAMstack architecture, at
-          its most simple, takes only 3 steps to get up and running.
+          its most simplest, takes only 3 steps to get up and running.
         </p>
         <Image
           imageAlt="steps to deploy a JAMstack site"
@@ -655,30 +663,50 @@ const SectionJamstack = ({ title, id }) => {
         <p>
           Finally, instant CDN invalidation ensures that the users are served
           the most updated web pages. Every time there is a new build, either an
-          FaaS or a server will invalidate the CDN and make it point at new
-          files rather than old content.
+          FaaS or a server will invalidate the CDN of old files, allowing users
+          to view the latest content
         </p>
         <Slider {...settings}>
           <div>
             <Image imageAlt="jamstack workflow" imageName="svgs/23.svg" />
+            <p className="slide-caption">The JAMstack automated workflow</p>
           </div>
           <div>
             <Image imageAlt="version control" imageName="svgs/24.svg" />
+            <p className="slide-caption">
+              Updates to the source code results in a webhook being sent to the
+              build server
+            </p>
           </div>
           <div>
             <Image imageAlt="automated builds" imageName="svgs/25.svg" />
+            <p className="slide-caption">
+              The build server will pre-build the pages after recieving the
+              webhook
+            </p>
           </div>
           <div>
             <Image imageAlt="atomic deploys" imageName="svgs/26.svg" />
+            <p className="slide-caption">
+              Atomic deploy ensures pre-built files get uploaded only if there
+              were no errors
+            </p>
           </div>
           <div>
             <Image imageAlt="entire site from CDN" imageName="svgs/27.svg" />
+            <p className="slide-caption">
+              The entire site is served from a CDN
+            </p>
           </div>
           <div>
             <Image
               imageAlt="instant cdn invalidation"
               imageName="svgs/28.svg"
             />
+            <p className="slide-caption">
+              A FaaS or server will invalidate the CDN to ensure the latest
+              content is served to users
+            </p>
           </div>
         </Slider>
       </Section>

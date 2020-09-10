@@ -92,6 +92,10 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold;
   }
 
+  .strong {
+    font-weight: bold;
+  }
+
   .slick-slide {
     margin-bottom: 2rem;
   }
@@ -105,14 +109,13 @@ const GlobalStyles = createGlobalStyle`
     color: #00a86b;
   }
 
-  .slide-caption {
+  p.slide-caption {
     width: 100%;
     line-height: 10vw;
     color: var(--color-claret);
     font-family: Arial, sans-serif;
     text-align: center;
     font-size: 0.8em;
-    margin: auto;
 
   }
 
