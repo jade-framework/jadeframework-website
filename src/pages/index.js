@@ -6,10 +6,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ContentMenu from "../components/content-menu"
 import SectionAbstract from "../components/section-abstract"
-import SectionOne from "../components/section-1"
-import SectionTwo from "../components/section-2"
-import SectionThree from "../components/section-3"
-import SectionExample from "../components/section-example"
+import SectionUsage from "../components/section-usage"
+import SectionJamstack from "../components/section-jamstack"
+import SectionCore from "../components/section-core"
+import SectionLaunch from "../components/section-launch"
+import SectionEvolution from "../components/section-evolution"
+import SectionFuture from "../components/section-future"
+import SectionBiblio from "../components/section-biblio"
 
 const Container = styled.div`
   @media (max-width: 800px) {
@@ -30,23 +33,23 @@ const Article = styled.article`
     padding: 0;
   }
   & h2 {
-    font-size: 2.75rem;
-    line-height: 3rem;
-    margin-top: 5.5rem;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    margin-top: 2.5rem;
   }
   & h3 {
     font-size: 1.65rem;
     color: black;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
   & h4 {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     line-height: 1.4rem;
     font-size: 1.4rem;
     color: var(--color-jade);
   }
   & h5 {
-    margin-top: 2rem;
+    margin-top: 1rem;
     line-height: 1.2rem;
     font-size: 1.2rem;
     color: var(--color-jade);
@@ -55,7 +58,7 @@ const Article = styled.article`
     line-height: 1.4rem;
     text-align: justify;
   }
-  & ul {
+  & ul.bullets {
     margin-left: 3rem;
     margin-bottom: 1rem;
   }
@@ -83,8 +86,9 @@ const Article = styled.article`
   }
   & ol li::before {
     content: counter(list-counter) ".";
-    padding-right: 2.6ch;
-    color: var(--color-claret);
+    text-indent: -1ch;
+    padding-right: 1ch;
+    color: var(--color-jade);
   }
   & img {
     display: block;
@@ -116,10 +120,14 @@ const CaseStudyPage = () => {
   const handleWaypointLeave = () => setStickyMenu(true)
 
   const sections = [
-    { id: "section-abstract", title: "Abstract" },
-    { id: "section-1", title: "JAMstack" },
-    { id: "section-2", title: "Jade Core" },
-    { id: "section-3", title: "Evolution of Jade" },
+    { id: "section-abstract", title: "Abstract", num: 1 },
+    { id: "section-usage", title: "Using Jade", num: 2 },
+    { id: "section-jamstack", title: "What is the JAMstack", num: 3 },
+    { id: "section-launch", title: "Launching a JAMstack web app", num: 4 },
+    { id: "section-core", title: "Jade Core", num: 5 },
+    { id: "section-evolution", title: "Evolution of Jade", num: 6 },
+    { id: "section-future", title: "Future work", num: 7 },
+    { id: "section-biblio", title: "Bibliography", num: 8 },
   ]
 
   return (
@@ -137,11 +145,14 @@ const CaseStudyPage = () => {
       <Container>
         <ArticleContainer>
           <Article className="case-study">
-            <SectionAbstract id={sections[0].id} title={sections[0].title} />
-            <SectionOne id={sections[1].id} title={sections[1].title} />
-            <SectionTwo id={sections[2].id} title={sections[2].title} />
-            <SectionThree id={sections[3].id} title={sections[3].title} />
-            {/* <SectionExample /> */}
+            <SectionAbstract {...sections[0]} />
+            <SectionUsage {...sections[1]} />
+            <SectionJamstack {...sections[2]} />
+            <SectionLaunch {...sections[3]} />
+            <SectionCore {...sections[4]} />
+            <SectionEvolution {...sections[5]} />
+            <SectionFuture {...sections[6]} />
+            <SectionBiblio {...sections[7]} />
           </Article>
         </ArticleContainer>
       </Container>

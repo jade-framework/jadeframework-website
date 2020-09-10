@@ -1,12 +1,10 @@
 import React from "react"
 import Section from "./section"
 
-const SectionAbstract = ({ title, id }) => {
-  const sectionNumber = 1
-
+const SectionAbstract = ({ num, title, id }) => {
   return (
     <>
-      <Section id={id} sectionTitle={`${sectionNumber}. Abstract`}>
+      <Section id={id} sectionTitle={`${num}. ${title}`}>
         <p>
           Jade is an open-source framework that makes it simple to deploy and
           maintain JAMstack applications on AWS cloud infrastructure. The
