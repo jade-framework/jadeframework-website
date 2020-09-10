@@ -123,8 +123,8 @@ const CaseStudyPage = () => {
     { id: "section-abstract", title: "Abstract", num: 1 },
     { id: "section-usage", title: "Using Jade", num: 2 },
     { id: "section-jamstack", title: "What is the JAMstack", num: 3 },
-    { id: "section-core", title: "Jade Core", num: 4 },
-    { id: "section-launch", title: "Launching a JAMstack web app", num: 5 },
+    { id: "section-launch", title: "Launching a JAMstack web app", num: 4 },
+    { id: "section-core", title: "Jade Core", num: 5 },
     { id: "section-evolution", title: "Evolution of Jade", num: 6 },
     { id: "section-future", title: "Future work", num: 7 },
     { id: "section-biblio", title: "Bibliography", num: 8 },
@@ -148,8 +148,8 @@ const CaseStudyPage = () => {
             <SectionAbstract {...sections[0]} />
             <SectionUsage {...sections[1]} />
             <SectionJamstack {...sections[2]} />
-            <SectionCore {...sections[3]} />
-            <SectionLaunch {...sections[4]} />
+            <SectionLaunch {...sections[3]} />
+            <SectionCore {...sections[4]} />
             <SectionEvolution {...sections[5]} />
             <SectionFuture {...sections[6]} />
             <SectionBiblio {...sections[7]} />
