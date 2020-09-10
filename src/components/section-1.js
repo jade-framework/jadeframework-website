@@ -1,4 +1,6 @@
 import React from "react"
+import { Link, animateScroll as scroll } from "react-scroll"
+
 import Section from "./section"
 import Image from "./image"
 import Card from "./card"
@@ -29,7 +31,18 @@ const SectionOne = ({ title, id }) => {
           To understand Jade, we first have to examine two typical web app
           architectures before learning about the JAMstack and how it differs.
           If you are already comfortable with web app architectures and the
-          JAMstack, click here to dive straight into Jade.
+          JAMstack,{" "}
+          <Link
+            activeClass="active"
+            to="section-2"
+            spy={true}
+            smooth={true}
+            offset={-270}
+            duration={500}
+          >
+            click here to dive straight into Jade
+          </Link>
+          .
         </p>
         <h3
           id={`subtitle-${sectionNumber}-1`}
@@ -44,19 +57,15 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.1.1 Static websites`}
         </h4>
         <p>
-          To serve static websites, a web server alone is often enough to handle
-          client requests. Static content such as HTML files can be served
-          directly from a web server to the client with content already
-          pre-populated. This is known as server-side rendering. The benefit
-          with server-side rendering is that pages are loaded quickly on the
-          browser since content does not have to be generated on the
-          client-side.
+          Originally, web sites consisted of static assets (HTML, CSS,
+          JavaScript) served by a web server directly to the client.
         </p>
         <Image imageAlt="static website architecture" imageName="svgs/4.svg" />
         <p>
-          However, the simple nature of this architecture results in limited
-          functionality. Only static content can be served to users with little
-          user interactivity or content contribution.
+          The simple nature of these web sites allowed for a simple architecture
+          but this simple architecture meant limited functionality. Every user
+          saw the same static pages and there was non way to dynamically source
+          content.
         </p>
         <h4
           id={`subtitle-${sectionNumber}-1-2`}
@@ -65,23 +74,21 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.1.2 Standard web apps`}
         </h4>
         <p>
-          Most web apps these days are able to serve dynamic content, using an
-          architecture we refer to as the standard web app architecture.
-          Standard web apps use application servers and databases, which
-          together are responsible for two main tasks:
-          <span className="emphasize">managing data</span> and
-          <span className="emphasize">other business logic</span>.
+          Web architectures subsequently evolved and introduced application
+          servers tasked with sourcing data and dynamically building pages at
+          runtime.
         </p>
         <Image imageAlt="web app architecture" imageName="svgs/5.svg" />
         <p>
-          This architecture, along with modern browser capabilities, allows for
-          highly dynamic and interactive content to be served to users.
+          This improved the capabilities of web sites immensly but the increased
+          complexity also introduced tradeoffs related to performance, security
+          and scalability.
         </p>
         <h3
           id={`subtitle-${sectionNumber}-2`}
           data-title={`Subtitle ${sectionNumber}-2`}
         >
-          {`${sectionNumber}.2 Serving content from a traditional architecture`}
+          {`${sectionNumber}.2 Serving content from a standard architecture`}
         </h3>
         <h4
           id={`subtitle-${sectionNumber}-2-1`}
@@ -90,31 +97,10 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.2.1 How web pages are served`}
         </h4>
         <p>
-          A web server sends back a text file, usually of the type ".html", in
-          response to a client GET request. If the site is a simple web page
-          consisting of only an HTML file, then the request/response stage is
-          complete. Most web pages, however, have additional resources such as
-          CSS files, JavaScript files, and images. The client will parse the
-          HTML file looking for any referenced resources. If found, the client
-          will make additional requests for those resources.
-          <span className="span-wrapper">
-            <Popup
-              trigger={<span className="superscript">2</span>}
-              position="bottom center"
-              on={["hover", "focus"]}
-              arrow={"bottom center" !== "center center"}
-            >
-              <Card
-                title="How a webpage is loaded and displayed"
-                author="Patrick Sexton"
-                organization="Varvy"
-                date="October 26, 2015"
-              ></Card>
-            </Popup>
-          </span>
-          Once the browser has all the files the final page will be rendered for
-          the user to view. It's important to note that web pages are built on
-          request from the client.
+          When a client visits a website, a GET request is made to a web server
+          requesting an HTML file. The client parses the file and will
+          subsequently send additional requests for resources referenced in the
+          parsed HTML such as CSS, JavaScript and images.
         </p>
         <Slider {...settings}>
           <div>
@@ -141,38 +127,41 @@ const SectionOne = ({ title, id }) => {
           {`${sectionNumber}.2.2 How web pages are dynamically built`}
         </h4>
         <p>
-          Dynamic content is usually built on the client-side. On an initial GET
-          request, the web server sends the client a skeleton HTML template
-          which will be populated with data on AJAX requests. This results in a
-          delay loading the page as data is being processed by the app server.
+          If the page the client is requesting includes content from a source
+          such as a database, the web server will send a request to an app
+          server, which will reach out to that data source, dynamically build
+          pages, and send them back to the client.
         </p>
         <Image imageAlt="building dynamic content" imageName="svgs/8.svg" />
-        <p className="slide-caption">Dynamic content is built at runtime</p>
         <h4
           id={`subtitle-${sectionNumber}-2-3`}
           data-title={`Subtitle ${sectionNumber}-2-3`}
         >
-          {`${sectionNumber}.2.3 The problem`}
+          {`${sectionNumber}.2.3 The tradeoff`}
         </h4>
-        <p>Two architectures have been introduced so far:</p>
+        <p>
+          Dynamically building pages allows content to be sourced at runtime but
+          also introduces a degree of complexity that comes with tradeoffs:{" "}
+        </p>
         <ul className="bullets">
-          <li className="list-item">Traditional web site architecture</li>
-          <li className="list-item">Traditional web app architecture</li>
+          <li className="list-item">
+            Performance: It takes time to source data and build pages
+          </li>
+          <li className="list-item">
+            Scalability: The infrastructure that handles the build must be
+            scaled based on traffic
+          </li>
+          <li className="list-item">
+            Security: Increased runtime infrastucture opens up increased surface
+            areas for attack
+          </li>
         </ul>
         <p>
-          The traditional web site architecture is able to serve static content
-          which is fast to load. However to serve dynamic content requires the
-          traditional web app architecture. Dynamic content can be served using
-          the traditional web app architecture but the trade-off is performance.
-          Web pages take longer to load due to data processing and other backend
-          processing that occurs. Also, to support dynamic content requires the
-          developer to managage backend infrastructure.
-        </p>
-        <p>
           Web page speed, the time it takes to fully display content on a page,
-          is an important factor to consider. Almost 50% of users expect a web
-          page to load within 2 seconds and if a page takes longer than 3
-          seconds to load, 53% of users will abandon the site.
+          is an important factor to consider in relation to both user engagement
+          and search engine optimization. Almost 50% of users expect a web page
+          to load within 2 seconds and if a page takes longer than 3 seconds to
+          load, statistically 53% of users are likely to abandon the site.
           <span className="span-wrapper">
             <Popup
               trigger={<span className="superscript">6</span>}
@@ -187,28 +176,24 @@ const SectionOne = ({ title, id }) => {
               ></Card>
             </Popup>
           </span>
+          In addtion, Google and other search engines consider performance an
+          important metric for their search rankings.
         </p>
-        <p>
-          Web page speed is also a criteria for search engine optimizations.
-          Google and other search engines take into account web page speeds for
-          their search rankings.
-        </p>
+
         <h4
           id={`subtitle-${sectionNumber}-2-4`}
           data-title={`Subtitle ${sectionNumber}-2-4`}
         >
-          {`${sectionNumber}.2.4 Preclude to a different architecture`}
+          {`${sectionNumber}.2.4 Prelude to a different architecture`}
         </h4>
         <p>
-          Even with the performance hit, the standard web app architecture will
-          continue to exist due to the benefits outweighing the cons. However,
-          for a very specific criteria of web apps, its possible to get the
-          benefit of both the architectures mentioned above which are:
+          It's obvious that modern web applications require the ability to
+          source data, build pages and serve these pages to clients. So let's
+          now take a look at how we could potentially modify the architecture to
+          retain this ability yet mitigate the associated tradeoffs in
+          performance, security and scalability.
         </p>
-        <ul className="bullets">
-          <li className="list-item">Web page speed of static web sites</li>
-          <li className="list-item">Dynamic functionality of web apps</li>
-        </ul>
+
         <h3
           id={`subtitle-${sectionNumber}-3`}
           data-title={`Subtitle ${sectionNumber}-3`}
@@ -219,8 +204,9 @@ const SectionOne = ({ title, id }) => {
           id={`subtitle-${sectionNumber}-3-1`}
           data-title={`Subtitle ${sectionNumber}-3-1`}
         >
-          {`${sectionNumber}.3.1 Pre-building pages to improve load time`}
+          {`${sectionNumber}.3.1 Building pages pre-runtime`}
         </h4>
+        <p></p>
         <p>
           Certain web pages are able to source data at build time. Those that
           meet this criteria can pre-build their pages which is a technique
