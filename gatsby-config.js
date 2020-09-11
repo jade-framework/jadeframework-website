@@ -3,6 +3,8 @@ module.exports = {
     title: `Jade`,
     description: `A framework for deploying JAMstack applications.`,
     author: `Jade Framework`,
+    image: "/jade_logo-full.png",
+    siteUrl: `https://jadeframework.dev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
