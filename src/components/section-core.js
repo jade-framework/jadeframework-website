@@ -78,7 +78,7 @@ const SectionCore = ({ num, title, id }) => {
           process
         </li>
       </ul>
-      <h4>{num}.1.2 Github webhook</h4>
+      <h4>{num}.1.2 GitHub webhook</h4>
       <p>
         The slideshow below details the process from the developer pushing a
         commit to GitHub to the build process being initiated.
@@ -99,16 +99,16 @@ const SectionCore = ({ num, title, id }) => {
       </Slider>
       <p>
         During initialization, Jade provides a URL to the developer to add to
-        their Github repository webhook settings so that anytime a commit is
+        their GitHub repository webhook settings so that anytime a commit is
         pushed to that repository, a webhook is sent to Jade’s EC2 instance and
-        its first stop is the Nginx web server. Nginx ensures the the request is
-        coming in on the correct port and proxies the request to Jade's node
+        its first stop is the Nginx web server. Nginx ensures that the request
+        is coming in on the correct port and proxies the request to Jade's node
         server.
       </p>
       <p>
-        The node servergit ensures the request is to the correct route and
+        The node server ensures the request is sent to the correct route and
         passes the request to the build logic. Jade then pulls the master branch
-        of the repository from Github and checks to see if it has changed since
+        of the repository from GitHub and checks to see if it has changed since
         the last build and if so, initiates the build process.
       </p>
       <h4>{num}.1.3 Examining the build process</h4>
@@ -116,8 +116,8 @@ const SectionCore = ({ num, title, id }) => {
         Once the build process has been initiated, Jade uses the user
         configuration stored on EC2, which holds information including the build
         command for the static site generator, to gather the required resources
-        to build the application, including the source code already pulled from
-        Github and data stored in external sources such as a content management
+        to build the application, including the source code, already pulled from
+        GitHub and data stored in external sources such as a content management
         system.
       </p>
       <Image imageName="svgs/48.svg" imageAlt="Build Process 5" />
@@ -125,7 +125,7 @@ const SectionCore = ({ num, title, id }) => {
         Jade is configured to utilize Gatsby as a static site generator and
         Contentful as a content management system. There are a multitude of
         options for both static site generators and content management systems;
-        however we chose these due to their relative prominence in the industry
+        however, we chose these due to their relative prominence in the industry
         and the large community and amount of resources around them that exist.
         Other tools could be utilized with further configuration by the
         developer, but Jade is built to support these 2 out of the box.

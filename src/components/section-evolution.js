@@ -42,8 +42,8 @@ const SectionEvolution = ({ num, title, id }) => {
       </h3>
       <p>
         The core architecture allows a single developer to be in charge of the
-        provisioned AWS infrastructure. What if a team of developers, say Alice
-        and Bob, are eager to work on a JAMstack site together?
+        provisioned AWS infrastructure. What if a team of developers, for
+        example Alice and Bob, are eager to work on a JAMstack site together?
       </p>
       <Image imageAlt="multi-user one user succeed" imageName="svgs/57.svg" />
       <p>
@@ -53,9 +53,9 @@ const SectionEvolution = ({ num, title, id }) => {
       </p>
       <p>
         One option available is for them to share credentials and config files.
-        This may work, but is largely an insecure and error-prone approach,
-        given that files may be corrupted or missing due to errors during the
-        sharing process.
+        This may work but is largely an insecure and error-prone approach, given
+        that files may be corrupted or missing due to errors during the sharing
+        process.
       </p>
       <Image imageAlt="multi-user add user fail" imageName="svgs/58.svg" />
       <p>
@@ -87,7 +87,7 @@ const SectionEvolution = ({ num, title, id }) => {
       <Image imageAlt="single app memory okay" imageName="svgs/61.svg" />
       <p>
         At present, there is sufficient memory to handle a single application.
-        EC2 will store the build environment, source code and other artifacts
+        EC2 will store the build environment, source code, and other artifacts
         related to this app, which amounts to nearly 1GB of data that is kept on
         EC2 even for the simplest of sites.
       </p>
@@ -110,8 +110,8 @@ const SectionEvolution = ({ num, title, id }) => {
       </p>
       <Image imageAlt="two apps on two servers" imageName="svgs/64.svg" />
       <p>
-        This not only reduces the likelihood of memory issues, it also allows
-        developers to save cost by freezing their servers when not working on a
+        This not only reduces the likelihood of memory issues but also allows
+        developers to save costs by freezing their servers when not working on a
         particular app. When they would like to make an edit, they can unfreeze
         it and continue to develop their site.
       </p>
