@@ -242,12 +242,12 @@ const SectionJamstack = ({ title, id, num }) => {
             from the request/response cycle, the need to scale application
             servers and related infrastructure in response to site traffic is
             eliminated. The entire site can be served via a CDN, which is
-            inherently optimized to scale.
+            inherently optimized to scale
           </li>
           <li className="list-item">
             Security: Removing infrastructure from the runtime equation and
             serving pre-built static pages from a CDN removes the majority of
-            malicious attack vectors.
+            malicious attack vectors
           </li>
         </ul>
         <h4 id={`subtitle-${num}-3-4`} data-title={`Subtitle ${num}-3-4`}>

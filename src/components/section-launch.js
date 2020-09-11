@@ -111,7 +111,7 @@ const SectionLaunch = ({ num, title, id }) => {
       <ul className="bullets">
         <li className="list-item">
           They are not tied to a set fee structure, but rather are charged based
-          on usage of the underlying AWS resources.
+          on usage of the underlying AWS resources
         </li>
         <li className="list-item">
           They are free to customize those underlying resources to suit their
