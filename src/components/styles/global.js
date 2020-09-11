@@ -54,6 +54,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a:hover {
     color: var(--color-link-hover);
+    cursor: pointer;    
   }
 
   a.active-link {
