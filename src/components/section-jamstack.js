@@ -43,7 +43,7 @@ const SectionJamstack = ({ title, id, num }) => {
             offset={-270}
             duration={500}
           >
-            click here to dive straight into Jade
+            click here to dive straight into launching a JAMstack web app
           </Link>
           .
         </p>
