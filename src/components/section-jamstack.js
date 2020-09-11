@@ -10,23 +10,26 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "reactjs-popup/dist/index.css"
 
-const SectionJamstack = ({ title, id }) => {
-  const sectionNumber = 3
+const SectionJamstack = ({ title, id, num }) => {
   const settings = {
+    autoplay: true,
+    autoplaySpeed: 4000,
     customPaging: index => {
       return <a>{index + 1}</a>
     },
     dots: true,
+    fade: true,
+    focusOnChange: true,
+    focusOnSelect: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    fade: true,
   }
 
   return (
     <>
-      <Section id={id} sectionTitle={`${sectionNumber}. What is the JAMstack`}>
+      <Section id={id} sectionTitle={`${num}. ${title}`}>
         <p>
           To understand Jade, we first have to examine two typical web app
           architectures before learning about the JAMstack and how it differs.
@@ -40,21 +43,15 @@ const SectionJamstack = ({ title, id }) => {
             offset={-270}
             duration={500}
           >
-            click here to dive straight into Jade
+            click here to dive straight into launching a JAMstack web app
           </Link>
           .
         </p>
-        <h3
-          id={`subtitle-${sectionNumber}-1`}
-          data-title={`Subtitle ${sectionNumber}-1`}
-        >
-          {`${sectionNumber}.1 Web app architectures`}
+        <h3 id={`subtitle-${num}-1`} data-title={`Subtitle ${num}-1`}>
+          {`${num}.1 Web app architectures`}
         </h3>
-        <h4
-          id={`subtitle-${sectionNumber}-1-1`}
-          data-title={`Subtitle ${sectionNumber}-1-1`}
-        >
-          {`${sectionNumber}.1.1 Static websites`}
+        <h4 id={`subtitle-${num}-1-1`} data-title={`Subtitle ${num}-1-1`}>
+          {`${num}.1.1 Static websites`}
         </h4>
         <p>
           Originally, web sites consisted of static assets (HTML, CSS,
@@ -67,11 +64,8 @@ const SectionJamstack = ({ title, id }) => {
           saw the same static pages and there was no way to dynamically source
           content.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-1-2`}
-          data-title={`Subtitle ${sectionNumber}-1-2`}
-        >
-          {`${sectionNumber}.1.2 Standard web apps`}
+        <h4 id={`subtitle-${num}-1-2`} data-title={`Subtitle ${num}-1-2`}>
+          {`${num}.1.2 Standard web apps`}
         </h4>
         <p>
           Web architectures subsequently evolved and introduced application
@@ -80,27 +74,21 @@ const SectionJamstack = ({ title, id }) => {
         </p>
         <Image imageAlt="web app architecture" imageName="svgs/5.svg" />
         <p>
-          This improved the capabilities of web sites immensly but the increased
-          complexity also introduced tradeoffs related to performance, security
-          and scalability.
+          This improved the capabilities of web sites immensely but the
+          increased complexity also introduced tradeoffs related to performance,
+          security and scalability.
         </p>
-        <h3
-          id={`subtitle-${sectionNumber}-2`}
-          data-title={`Subtitle ${sectionNumber}-2`}
-        >
-          {`${sectionNumber}.2 Serving content from a standard architecture`}
+        <h3 id={`subtitle-${num}-2`} data-title={`Subtitle ${num}-2`}>
+          {`${num}.2 Serving content from a standard architecture`}
         </h3>
-        <h4
-          id={`subtitle-${sectionNumber}-2-1`}
-          data-title={`Subtitle ${sectionNumber}-2-1`}
-        >
-          {`${sectionNumber}.2.1 How web pages are served`}
+        <h4 id={`subtitle-${num}-2-1`} data-title={`Subtitle ${num}-2-1`}>
+          {`${num}.2.1 How web pages are served`}
         </h4>
         <p>
           When a client visits a website, a GET request is made to a web server
           requesting an HTML file. The client parses the file and will
-          subsequently send additional requests for resources referenced in the
-          parsed HTML such as CSS, JavaScript and images.
+          subsequently, send additional requests for resources referenced in the
+          parsed HTML such as CSS, JavaScript, and images.
         </p>
         <Slider {...settings}>
           <div>
@@ -121,11 +109,8 @@ const SectionJamstack = ({ title, id }) => {
             </p>
           </div>
         </Slider>
-        <h4
-          id={`subtitle-${sectionNumber}-2-2`}
-          data-title={`Subtitle ${sectionNumber}-2-2`}
-        >
-          {`${sectionNumber}.2.2 How web pages are dynamically built`}
+        <h4 id={`subtitle-${num}-2-2`} data-title={`Subtitle ${num}-2-2`}>
+          {`${num}.2.2 How web pages are dynamically built`}
         </h4>
         <p>
           If the page the client is requesting includes content from a source
@@ -139,11 +124,8 @@ const SectionJamstack = ({ title, id }) => {
             3. Serving dynamic content involves the app server
           </p>
         </div>
-        <h4
-          id={`subtitle-${sectionNumber}-2-3`}
-          data-title={`Subtitle ${sectionNumber}-2-3`}
-        >
-          {`${sectionNumber}.2.3 The tradeoff`}
+        <h4 id={`subtitle-${num}-2-3`} data-title={`Subtitle ${num}-2-3`}>
+          {`${num}.2.3 The tradeoff`}
         </h4>
         <p>
           Dynamically building pages allows content to be sourced at runtime but
@@ -158,8 +140,8 @@ const SectionJamstack = ({ title, id }) => {
             scaled based on traffic
           </li>
           <li className="list-item">
-            Security: Increased runtime infrastucture opens up increased surface
-            areas for attack
+            Security: Increased runtime infrastructure opens up increased
+            surface areas for attack
           </li>
         </ul>
         <p>
@@ -186,36 +168,28 @@ const SectionJamstack = ({ title, id }) => {
           important metric for their search rankings.
         </p>
 
-        <h3
-          id={`subtitle-${sectionNumber}-3`}
-          data-title={`Subtitle ${sectionNumber}-3`}
-        >
-          {`${sectionNumber}.3 New architecture for certain use cases`}
+        <h3 id={`subtitle-${num}-3`} data-title={`Subtitle ${num}-3`}>
+          {`${num}.3 New architecture for certain use cases`}
         </h3>
-        <h4
-          id={`subtitle-${sectionNumber}-3-1`}
-          data-title={`Subtitle ${sectionNumber}-3-1`}
-        >
-          {`${sectionNumber}.3.1 Building pages pre-runtime`}
+        <h4 id={`subtitle-${num}-3-1`} data-title={`Subtitle ${num}-3-1`}>
+          {`${num}.3.1 Building pages pre-runtime`}
         </h4>
         <p>
           It's obvious that modern web applications require the ability to
-          source data, build pages and serve these pages to clients. So let's
+          source data, build pages, and serve these pages to clients. So let's
           now take a look at how we could potentially modify the architecture to
           retain this ability yet mitigate the associated tradeoffs in
           performance, security and scalability by sourcing data and building
           pages before runtime.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-3-2`}
-          data-title={`Subtitle ${sectionNumber}-3-2`}
-        >
-          {`${sectionNumber}.3.2 Static site generators`}
+        <h4 id={`subtitle-${num}-3-2`} data-title={`Subtitle ${num}-3-2`}>
+          {`${num}.3.2 Static site generators`}
         </h4>
         <p>
-          Static site generators (SSGs) are a tool, the main purpose of which is
-          to source content, apply that content to templates, and generate web
-          pages. Popular examples of SSGs include Hugo, Jekyll, and Gatsby.
+          Static site generators (SSGs) are a site building tool, the main
+          purpose of which is to source content, apply that content to templates
+          and generate web pages. Popular examples of SSGs include Hugo, Jekyll,
+          and Gatsby.
         </p>
         <p>SSGs generally apply 4 processes:</p>
         <ul className="bullets">
@@ -244,11 +218,8 @@ const SectionJamstack = ({ title, id }) => {
           eliminate the need for an application server to dynamically build
           pages at runtime.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-3-3`}
-          data-title={`Subtitle ${sectionNumber}-3-3`}
-        >
-          {`${sectionNumber}.3.3 Advantages of pre-building pages`}
+        <h4 id={`subtitle-${num}-3-3`} data-title={`Subtitle ${num}-3-3`}>
+          {`${num}.3.3 Advantages of pre-building pages`}
         </h4>
         <p>
           The most significant result of building pages pre-runtime is the
@@ -257,7 +228,7 @@ const SectionJamstack = ({ title, id }) => {
           is rather handled independently.
         </p>
         <p>
-          The elimimation of dynamic builds at runtime also addresses the three
+          The elimination of dynamic builds at runtime also addresses the three
           issues we previously discussed, namely:
         </p>
         <ul className="bullets">
@@ -269,27 +240,24 @@ const SectionJamstack = ({ title, id }) => {
           <li className="list-item">
             Scalability: Since the process of compiling pages has been decoupled
             from the request/response cycle, the need to scale application
-            servers and related infrastructure in reponse to site traffic is
-            elminated. The entire site can be served via a CDN, which is
-            inherently optimized to scale.
+            servers and related infrastructure in response to site traffic is
+            eliminated. The entire site can be served via a CDN, which is
+            inherently optimized to scale
           </li>
           <li className="list-item">
             Security: Removing infrastructure from the runtime equation and
             serving pre-built static pages from a CDN removes the majority of
-            malicious attack vectors.
+            malicious attack vectors
           </li>
         </ul>
-        <h4
-          id={`subtitle-${sectionNumber}-3-4`}
-          data-title={`Subtitle ${sectionNumber}-3-4`}
-        >
-          {`${sectionNumber}.3.4 Static web apps with dynamic functionality`}
+        <h4 id={`subtitle-${num}-3-4`} data-title={`Subtitle ${num}-3-4`}>
+          {`${num}.3.4 Static web apps with dynamic functionality`}
         </h4>
         <p>
           Since we're suggesting an architecture that pre-builds the entire web
-          application and serves it as static assets from a CDN, how do we
-          implement dynamic functionality at runtime? In the standard web app
-          architecture the application server and database are responsible for
+          app and serves it as static assets from a CDN, how do we implement
+          dynamic functionality at runtime? In the standard web app
+          architecture, the application server and database are responsible for
           providing dynamic functionality. To transition to a serverless model,
           this functionality can be abstracted to APIs and serverless functions.
         </p>
@@ -310,17 +278,11 @@ const SectionJamstack = ({ title, id }) => {
           serverless functions is commonly known as the JAMstack architecture.
         </p>
         <Image imageAlt="JAMstack architecture" imageName="svgs/15.svg" />
-        <h3
-          id={`subtitle-${sectionNumber}-4`}
-          data-title={`Subtitle ${sectionNumber}-4`}
-        >
-          {`${sectionNumber}.4 The JAMstack architecture`}
+        <h3 id={`subtitle-${num}-4`} data-title={`Subtitle ${num}-4`}>
+          {`${num}.4 The JAMstack architecture`}
         </h3>
-        <h4
-          id={`subtitle-${sectionNumber}-4-1`}
-          data-title={`Subtitle ${sectionNumber}-4-1`}
-        >
-          {`${sectionNumber}.4.1 Understanding the JAM in JAMstack`}
+        <h4 id={`subtitle-${num}-4-1`} data-title={`Subtitle ${num}-4-1`}>
+          {`${num}.4.1 Understanding the JAM in JAMstack`}
         </h4>
         <p>
           The JAMstack architecture is neither a tech stack nor a tool. It is an
@@ -368,13 +330,13 @@ const SectionJamstack = ({ title, id }) => {
         </p>
         <p>
           For standard web apps, servers are used to provide dynamic
-          functionality. In the JAMstack, server side operations are abstracted
+          functionality. In the JAMstack, server-side operations are abstracted
           into serverless functions and reusable APIs which can be either
           3rd-party APIs or custom APIs. These are typically accessed by the
           client over HTTPS using JavaScript.
         </p>
         <p>
-          Markup is pre-built at build time, and is often compiled with a static
+          Markup is pre-built at build time and is often compiled with a static
           site generator which applies content to templates. These static site
           generators can source data from content management systems, an
           application providing an interface for users to create, manage, and
@@ -424,11 +386,8 @@ const SectionJamstack = ({ title, id }) => {
             </tr>
           </tbody>
         </table>
-        <h4
-          id={`subtitle-${sectionNumber}-4-2`}
-          data-title={`Subtitle ${sectionNumber}-4-2`}
-        >
-          {`${sectionNumber}.4.2 High level view of the JAMstack`}
+        <h4 id={`subtitle-${num}-4-2`} data-title={`Subtitle ${num}-4-2`}>
+          {`${num}.4.2 High-level view of the JAMstack`}
         </h4>
         <p>
           Having replaced the web server with a CDN, and the application server
@@ -446,25 +405,19 @@ const SectionJamstack = ({ title, id }) => {
           the client, not the server, has now become the orchestrator of dynamic
           functionality. There is a clear separation of responsibilities for
           developers. Frontend developers can focus on building their
-          application, calling an APIs for data management and other
-          functionality while the maintenance and optimization of those APIs is
-          handled separately.
+          application, calling APIs for data management and other functionality
+          while the maintenance and optimization of those APIs is handled
+          separately.
         </p>
-        <h3
-          id={`subtitle-${sectionNumber}-5`}
-          data-title={`Subtitle ${sectionNumber}-5`}
-        >
-          {`${sectionNumber}.5 Diving into the JAMstack`}
+        <h3 id={`subtitle-${num}-5`} data-title={`Subtitle ${num}-5`}>
+          {`${num}.5 Diving into the JAMstack`}
         </h3>
         <p>
-          With the high level overview established, this section will explain
+          With the high-level overview established, this section will explain
           different aspects of the JAMstack architecture in further detail.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-5-1`}
-          data-title={`Subtitle ${sectionNumber}-5-1`}
-        >
-          {`${sectionNumber}.5.1 Serving static content from a CDN`}
+        <h4 id={`subtitle-${num}-5-1`} data-title={`Subtitle ${num}-5-1`}>
+          {`${num}.5.1 Serving static content from a CDN`}
         </h4>
         <Image
           imageAlt="serving static content from CDNs"
@@ -511,15 +464,13 @@ const SectionJamstack = ({ title, id }) => {
           CDNs over web servers reduces the risk of attacks. Web servers are
           often the target of attacks such as DDoS or hacking attempts. This
           often requires security precautions and regular maintenance. Regarding
-          maintenance, the use of CDNs allow developers to focus solely on their
-          logic and not infrastructure as CDNs are owned by large corporations
-          which will be responsible for maintaining and securing said CDNs.
+          maintenance, the use of CDNs allows developers to focus solely on
+          their logic and not infrastructure as CDNs are owned by large
+          corporations which will be responsible for maintaining and securing
+          said CDNs.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-5-2`}
-          data-title={`Subtitle ${sectionNumber}-5-2`}
-        >
-          {`${sectionNumber}.5.2 Implementing dynamic functionality`}
+        <h4 id={`subtitle-${num}-5-2`} data-title={`Subtitle ${num}-5-2`}>
+          {`${num}.5.2 Implementing dynamic functionality`}
         </h4>
         <p>
           In standard web app architectures, application servers are responsible
@@ -539,30 +490,18 @@ const SectionJamstack = ({ title, id }) => {
         <p>
           Serverless functions, or Functions as a Service (FaaS), can also be
           used in place of servers to manage other business logic. FaaS are
-          useful when APIs and frontend logic alone are not capable of replacing
+          useful when APIs and frontend logic alone is not capable of replacing
           all business logic once handled by the application server.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-5-3`}
-          data-title={`Subtitle ${sectionNumber}-5-3`}
-        >
-          {`${sectionNumber}.5.3 Use case for the JAMstack`}
-        </h4>
-        <h3
-          id={`subtitle-${sectionNumber}-6`}
-          data-title={`Subtitle ${sectionNumber}-6`}
-        >
-          {`${sectionNumber}.6 The JAMstack workflow`}
+        <h3 id={`subtitle-${num}-6`} data-title={`Subtitle ${num}-6`}>
+          {`${num}.6 The JAMstack workflow`}
         </h3>
-        <h4
-          id={`subtitle-${sectionNumber}-6-1`}
-          data-title={`Subtitle ${sectionNumber}-6-1`}
-        >
-          {`${sectionNumber}.6.1 JAMstack at a minimum`}
+        <h4 id={`subtitle-${num}-6-1`} data-title={`Subtitle ${num}-6-1`}>
+          {`${num}.6.1 JAMstack at a minimum`}
         </h4>
         <p>
           Launching an application utilizing the JAMstack architecture, at its
-          most simplest, takes only 3 steps:
+          simplest, takes only 3 steps:
         </p>
         <Image
           imageAlt="steps to deploy a JAMstack site"
@@ -573,11 +512,8 @@ const SectionJamstack = ({ title, id }) => {
           practices in regards to deploying and maintaining applications to
           improve developer experience.
         </p>
-        <h4
-          id={`subtitle-${sectionNumber}-6-2`}
-          data-title={`Subtitle ${sectionNumber}-6-2`}
-        >
-          {`${sectionNumber}.6.2 The JAMstack way`}
+        <h4 id={`subtitle-${num}-6-2`} data-title={`Subtitle ${num}-6-2`}>
+          {`${num}.6.2 The JAMstack way`}
         </h4>
         <p>
           These elements are part of what is called “The JAMstack Way”
@@ -611,7 +547,7 @@ const SectionJamstack = ({ title, id }) => {
           Once pages are built, they should only be deployed if all the pages
           were built successfully. This is known as an atomic deploy - each
           deployment is self-contained, and should a build fail, the build
-          process is completely rolled back. There are two major benefits with
+          process is completely rolled back. There are two major benefits to
           this approach. First, this ensures that state is always consistent for
           each deploy, and viewing a build does not depend on other sources.
           Second, there will be no downtime for the website, allowing users to

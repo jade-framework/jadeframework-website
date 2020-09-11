@@ -1,15 +1,14 @@
 import React from "react"
-
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 import styled from "styled-components"
 
 const Aside = styled.aside`
   position: fixed;
   top: calc(50% - 12rem);
-  width: 300px;
+  width: 250px;
   opacity: 1;
   transition: 0.2s ease-in-out;
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     display: none;
   }
 `
@@ -24,8 +23,6 @@ const ListItem = styled.li`
   line-height: 1.8rem;
   cursor: pointer;
 `
-
-const ListItemLink = styled.a``
 
 const ContentMenu = ({ sections }) => {
   return (

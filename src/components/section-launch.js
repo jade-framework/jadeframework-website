@@ -90,12 +90,12 @@ const SectionLaunch = ({ num, title, id }) => {
         authentication and forms.
       </p>
       <p>
-        However, with the exception of Vercel, these providers are not open
-        source. When using their services, developers are subject to their set
-        fee structures. In addition, developers do not have any flexibility to
-        adjust the underlying infrastructure used by the provider. As such, any
-        changes will have to be made via the JaaS provider, which is likely to
-        incur an additional cost. 
+        However, with the exception of Vercel, these providers are not
+        open-source. When using their services, developers are subject to their
+        set fee structures. In addition, developers do not have any flexibility
+        to adjust the underlying infrastructure used by the provider. As such,
+        any changes will have to be made via the JaaS provider, which is likely
+        to incur an additional cost. 
       </p>
       <h3>{num}.5 Why we built Jade</h3>
       <p>
@@ -104,14 +104,14 @@ const SectionLaunch = ({ num, title, id }) => {
         themselves.
       </p>
       <p>
-        Jade is open source, so developers are free to take the source code and
+        Jade is open-source, so developers are free to take the source code and
         modify it to suit their individual needs. Also, Jade provisions AWS
         resources for the developer, meaning:
       </p>
       <ul className="bullets">
         <li className="list-item">
           They are not tied to a set fee structure, but rather are charged based
-          on usage of the underlying AWS resources.
+          on usage of the underlying AWS resources
         </li>
         <li className="list-item">
           They are free to customize those underlying resources to suit their

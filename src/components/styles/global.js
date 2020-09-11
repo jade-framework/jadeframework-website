@@ -54,6 +54,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a:hover {
     color: var(--color-link-hover);
+    cursor: pointer;    
   }
 
   a.active-link {
@@ -223,6 +224,8 @@ const GlobalStyles = createGlobalStyle`
     margin-left: 0.1rem;
     margin-right: 0.3rem;
   }
+
+  .slick-slider { width: 1px; min-width: 100%; *width: 100%; }
   
   pre {
     background: #f4f4f4;

@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Image from "./image"
 
 import styled from "styled-components"
 
@@ -23,7 +24,9 @@ const Subheading = styled.h2`
 const Header = ({ siteTitle }) => (
   <Banner>
     <Heading>Jade</Heading>
-    <Subheading>A deployment environment for JAMstack applications.</Subheading>
+    <Image imageAlt="Jade logo" imageName="jade_logo-full.png" />
+
+    <Subheading>A deployment environment for JAMstack applications</Subheading>
   </Banner>
 )
 

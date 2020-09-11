@@ -27,7 +27,8 @@ const SectionEvolution = ({ num, title, id }) => {
       <p>
         From our research into JaaS providers and our own experience building
         Jade core, we identified several challenges that developers might face
-        and sought to overcome them. These challenges were:
+        and sought to overcome them. This section introduces the following
+        challenges and how we sought to overcome them:
       </p>
       <ul className="bullets">
         <li className="list-item">Supporting multiple developers</li>
@@ -42,8 +43,8 @@ const SectionEvolution = ({ num, title, id }) => {
       </h3>
       <p>
         The core architecture allows a single developer to be in charge of the
-        provisioned AWS infrastructure. What if a team of developers, say Alice
-        and Bob, are eager to work on a JAMstack site together?
+        provisioned AWS infrastructure. What if a team of developers, for
+        example Alice and Bob, are eager to work on a JAMstack site together?
       </p>
       <Image imageAlt="multi-user one user succeed" imageName="svgs/57.svg" />
       <p>
@@ -53,9 +54,9 @@ const SectionEvolution = ({ num, title, id }) => {
       </p>
       <p>
         One option available is for them to share credentials and config files.
-        This may work, but is largely an insecure and error-prone approach,
-        given that files may be corrupted or missing due to errors during the
-        sharing process.
+        This may work but is largely an insecure and error-prone approach, given
+        that files may be corrupted or missing due to errors during the sharing
+        process.
       </p>
       <Image imageAlt="multi-user add user fail" imageName="svgs/58.svg" />
       <p>
@@ -87,7 +88,7 @@ const SectionEvolution = ({ num, title, id }) => {
       <Image imageAlt="single app memory okay" imageName="svgs/61.svg" />
       <p>
         At present, there is sufficient memory to handle a single application.
-        EC2 will store the build environment, source code and other artifacts
+        EC2 will store the build environment, source code, and other artifacts
         related to this app, which amounts to nearly 1GB of data that is kept on
         EC2 even for the simplest of sites.
       </p>
@@ -110,8 +111,8 @@ const SectionEvolution = ({ num, title, id }) => {
       </p>
       <Image imageAlt="two apps on two servers" imageName="svgs/64.svg" />
       <p>
-        This not only reduces the likelihood of memory issues, it also allows
-        developers to save cost by freezing their servers when not working on a
+        This not only reduces the likelihood of memory issues but also allows
+        developers to save costs by freezing their servers when not working on a
         particular app. When they would like to make an edit, they can unfreeze
         it and continue to develop their site.
       </p>
@@ -161,7 +162,7 @@ const SectionEvolution = ({ num, title, id }) => {
       />
       <p>
         As of now, Jade’s default Docker setup allows a user to build and deploy
-        Gatsby applications. If desired, developers can edit the
+        Gatsby applications. If desired, developers can edit the{" "}
         <code>Dockerfile</code> in order to choose which version of Node they
         want to use. If more configuration for builds is needed, the{" "}
         <code>dockerBuild.js</code> file can be edited as well. The purpose here
@@ -209,7 +210,7 @@ const SectionEvolution = ({ num, title, id }) => {
       </p>
       <Image imageAlt="errors are distributed to CDN" imageName="svgs/73.svg" />
       <p>
-        To allow developers to view their site, we introduce the use of a
+        To allow developers to view their site, we introduce the use of a{" "}
         <code>staging</code> branch where developers can view their website
         before it gets distributed to the CDN. Developers can use the Git
         command <code>git push origin staging</code>, preview their site, and
