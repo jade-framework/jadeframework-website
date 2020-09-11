@@ -74,8 +74,8 @@ function SEO({ description, lang, meta, title, img }) {
     >
       {image && <meta property="og:image" content={image} />}
       {image && <meta property="og:image:type" content="image/png" />}
-      {image && <meta property="og:image:width" content={788} />}
-      {image && <meta property="og:image:height" content={1201} />}
+      {image && <meta property="og:image:width" content={821} />}
+      {image && <meta property="og:image:height" content={340} />}
     </Helmet>
   )
 }
