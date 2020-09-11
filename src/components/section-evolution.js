@@ -27,7 +27,8 @@ const SectionEvolution = ({ num, title, id }) => {
       <p>
         From our research into JaaS providers and our own experience building
         Jade core, we identified several challenges that developers might face
-        and sought to overcome them. These challenges were:
+        and sought to overcome them. This section introduces the following
+        challenges and how we sought to overcome them:
       </p>
       <ul className="bullets">
         <li className="list-item">Supporting multiple developers</li>
@@ -161,7 +162,7 @@ const SectionEvolution = ({ num, title, id }) => {
       />
       <p>
         As of now, Jade’s default Docker setup allows a user to build and deploy
-        Gatsby applications. If desired, developers can edit the
+        Gatsby applications. If desired, developers can edit the{" "}
         <code>Dockerfile</code> in order to choose which version of Node they
         want to use. If more configuration for builds is needed, the{" "}
         <code>dockerBuild.js</code> file can be edited as well. The purpose here
@@ -209,7 +210,7 @@ const SectionEvolution = ({ num, title, id }) => {
       </p>
       <Image imageAlt="errors are distributed to CDN" imageName="svgs/73.svg" />
       <p>
-        To allow developers to view their site, we introduce the use of a
+        To allow developers to view their site, we introduce the use of a{" "}
         <code>staging</code> branch where developers can view their website
         before it gets distributed to the CDN. Developers can use the Git
         command <code>git push origin staging</code>, preview their site, and

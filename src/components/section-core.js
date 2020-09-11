@@ -116,9 +116,9 @@ const SectionCore = ({ num, title, id }) => {
         Once the build process has been initiated, Jade uses the user
         configuration stored on EC2, which holds information including the build
         command for the static site generator, to gather the required resources
-        to build the application, including the source code, already pulled from
-        GitHub and data stored in external sources such as a content management
-        system.
+        to build the application. The resources gathered includes the source
+        code, which is already pulled from GitHub, and data stored in external
+        sources such as a content management system.
       </p>
       <Image imageName="svgs/48.svg" imageAlt="Build Process 5" />
       <p>
