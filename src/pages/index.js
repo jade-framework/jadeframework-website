@@ -13,6 +13,7 @@ import SectionLaunch from "../components/section-launch"
 import SectionEvolution from "../components/section-evolution"
 import SectionFuture from "../components/section-future"
 import SectionBiblio from "../components/section-biblio"
+import Team from "../components/team"
 
 const Container = styled.div`
   @media (max-width: 800px) {
@@ -156,6 +157,7 @@ const CaseStudyPage = () => {
           </Article>
         </ArticleContainer>
       </Container>
+      <Team />
     </Layout>
   )
 }
