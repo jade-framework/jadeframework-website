@@ -27,22 +27,14 @@ const Team = props => {
             <img src="" alt="Krunal Patel" />
             <h3>Krunal Patel</h3>
             <p>San Francisco, CA</p>
-            <ContactIcons
-              resume="/resume-jc-10-09-2020-13-17-59.pdf"
-              web="https://jeremycrichton.com"
-              linkedin="https://www.linkedin.com/in/jeremy-crichton/"
-            />
+            <ContactIcons resume="#!" web="#!" linkedin="#!" />
           </li>
           <li class="individual">
-            <img src="" alt="Takayoshi Sampson" />
+            <img src="" alt="Edmond Tam" />
             <h3>Edmond Tam</h3>
 
             <p>London, UK</p>
-            <ContactIcons
-              resume="/resume-jc-10-09-2020-13-17-59.pdf"
-              web="https://jeremycrichton.com"
-              linkedin="https://www.linkedin.com/in/jeremy-crichton/"
-            />
+            <ContactIcons resume="#!" web="#!" linkedin="#!" />
           </li>
         </ul>
       </section>
