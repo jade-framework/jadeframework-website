@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     --color-danger: var(--color-pomegranate);
     --color-link: var(--color-jade);
     --color-link-hover: var(--color-flamingo);
+
   }
   *,
   *:before,
@@ -199,17 +200,19 @@ const GlobalStyles = createGlobalStyle`
   }
 
   #jam-table td {
-    border: 1px solid #bbb;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
   }
 
   #jam-table tr:last-child {
-    background-color: var(--color-claret);
+    background-color: grey;
     color: white;
     font-weight: bold;
   }
 
   #jam-table tr:first-child {
-    background-color: var(--color-pomegranate);
+    background-color: var(--color-jade);
+    color: black;
   }
 
   #ssg-table {
@@ -242,6 +245,12 @@ const GlobalStyles = createGlobalStyle`
     padding: 1em 1.5em;
     display: block;
     word-wrap: break-word;
+}
+
+@media only screen and (max-width: 600px) {
+  #jam-table {
+    font-size: 0.8em;
+  }
 }
 `
 

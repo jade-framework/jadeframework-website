@@ -27,7 +27,11 @@ const Team = props => {
             <img src="" alt="Krunal Patel" />
             <h3>Krunal Patel</h3>
             <p>San Francisco, CA</p>
-            <ContactIcons resume="#!" web="#!" linkedin="#!" />
+            <ContactIcons
+              resume="../../public/krunal_patel_resume.pdf"
+              web="https://kpatel27.github.io"
+              linkedin="https://www.linkedin.com/in/krunal-p-patel/"
+            />
           </li>
           <li class="individual">
             <img src="" alt="Edmond Tam" />
