@@ -34,7 +34,7 @@ const Team = props => {
             />
           </li>
           <li class="individual">
-            <img src="" alt="Edmond Tam" />
+            <img src="/edmond-tam.png" alt="Edmond Tam" />
             <h3>Edmond Tam</h3>
             <p>London, UK</p>
             <ContactIcons
