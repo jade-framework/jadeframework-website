@@ -36,9 +36,12 @@ const Team = props => {
           <li class="individual">
             <img src="" alt="Edmond Tam" />
             <h3>Edmond Tam</h3>
-
             <p>London, UK</p>
-            <ContactIcons resume="#!" web="#!" linkedin="#!" />
+            <ContactIcons
+              resume="/Resume - Edmond Tam.pdf"
+              web="https://edmondtam1.github.io"
+              linkedin="https://www.linkedin.com/in/edmondtam"
+            />
           </li>
         </ul>
       </section>
