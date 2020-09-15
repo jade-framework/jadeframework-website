@@ -24,7 +24,7 @@ const Team = props => {
             />
           </li>
           <li class="individual">
-            <img src="" alt="Krunal Patel" />
+            <img src="/1krunal_patel.png" alt="Krunal Patel" />
             <h3>Krunal Patel</h3>
             <p>San Francisco, CA</p>
             <ContactIcons
