@@ -51,35 +51,37 @@ const Nav = ({ sections, team }) => {
       {sections ? (
         <List>
           <ListSubheader>About</ListSubheader>
-          <ListItem button key={team.id}>
-            <PageLink to="/team">
+          <PageLink to="/team">
+            <ListItem button key={team.id}>
               <ListItemText primary={team.title} disableTypography={true} />
-            </PageLink>
-          </ListItem>
+            </ListItem>
+          </PageLink>
           <Divider />
           <ListSubheader>Contents</ListSubheader>
           {sections.map((section, index) => (
-            <ListItem button key={section.id}>
-              <Link
-                activeClass="active"
-                to={section.id}
-                spy={true}
-                smooth={true}
-                offset={-270}
-                duration={500}
-              >
+            <Link
+              activeClass="active"
+              to={section.id}
+              spy={true}
+              smooth={true}
+              offset={-270}
+              duration={500}
+            >
+              <ListItem button key={section.id}>
                 <ListItemText
                   primary={section.title}
                   disableTypography={true}
                 />
-              </Link>
-            </ListItem>
+              </ListItem>
+            </Link>
           ))}
         </List>
       ) : (
         <List>
           <PageLink to="/">
-            <ListItem>Home</ListItem>
+            <ListItem button key={team.id}>
+              <ListItemText primary="Home" disableTypography={true} />
+            </ListItem>
           </PageLink>
         </List>
       )}

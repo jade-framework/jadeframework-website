@@ -12,7 +12,7 @@ const TeamPage = () => {
     <>
       <Layout>
         <SEO title="Team" />
-        <Banner title="Team" />
+        <Banner title="Team" team={team} />
         <Team {...team} />
       </Layout>
     </>
