@@ -11,11 +11,12 @@ const Icons = styled.div`
 `
 
 const Icon = styled(FontAwesomeIcon)`
+  color: black;
   margin-right: ${props => (props.margin ? props.margin : "1.4rem")};
   transition: color 0.5s;
 
   &:hover {
-    color: var(--color-secondary);
+    color: var(--color-jade);
   }
 `
 const ContactIcons = ({ margin, size, resume, web, linkedin }) => (
