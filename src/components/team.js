@@ -1,6 +1,7 @@
 import React from "react"
 
 import ContactIcons from "./contact-icons"
+import ImageJC from "./image-jc"
 import "./styles/team.css"
 
 const Team = props => {
@@ -14,7 +15,7 @@ const Team = props => {
         </p>
         <ul>
           <li class="individual">
-            <img src="" alt="Jeremy Crichton" />
+            <img src="/jeremy-crichton.png" alt="Krunal Patel" />
             <h3>Jeremy Crichton</h3>
             <p>Vancouver, BC</p>
             <ContactIcons
