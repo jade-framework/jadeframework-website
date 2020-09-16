@@ -214,9 +214,8 @@ const SectionEvolution = ({ num, title, id }) => {
         <code>staging</code> branch where developers can view their website
         before it gets distributed to the CDN. Developers can use the Git
         command <code>git push origin staging</code>, preview their site, and
-        then use the command
-        <code>git push origin master</code> once they are satisfied with the
-        site.
+        then use the command <code>git push origin master</code> once they are
+        satisfied with the site.
       </p>
       <Image
         imageAlt="staging branch enables previews"

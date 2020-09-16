@@ -1,12 +1,12 @@
 #our-team {
-  background-color: #282828;
-  color: #fff;
-  margin-top: 100px;
+  /* background-color: #282828; */
+  background-color: white;
+  color: black;
+  padding-top: 50px;
   padding-bottom: 25px;
 }
 
 #our-team h1 {
-  padding-top: 100px;
   margin-bottom: 30px;
   text-align: center;
   line-height: 4rem;
@@ -22,16 +22,19 @@
 }
 
 #our-team > ul {
-  padding: 60px 0 80px;
+  padding-top: 60px;
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-#our-team li,
-#our-team .social-icons li {
-  display: inline-block;
-  margin: 0 3%;
-  width: 20%;
-  vertical-align: top;
+@media only screen and (max-width: 600px) {
+  #our-team > ul {
+    grid-template-columns: 1fr;
+  }
+  #our-team li:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 }
 
 #our-team h3 {
@@ -39,7 +42,7 @@
 }
 
 #our-team a {
-  color: #282828;
+  color: white;
   text-decoration: none;
 }
 

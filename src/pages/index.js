@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
 import ContentMenu from "../components/content-menu"
 import SectionAbstract from "../components/section-abstract"
 import SectionUsage from "../components/section-usage"
@@ -13,6 +14,7 @@ import SectionLaunch from "../components/section-launch"
 import SectionEvolution from "../components/section-evolution"
 import SectionFuture from "../components/section-future"
 import SectionBiblio from "../components/section-biblio"
+import Banner from "../components/banner"
 
 const Container = styled.div`
   @media (max-width: 800px) {
@@ -26,6 +28,7 @@ const ArticleContainer = styled.div`
 `
 
 const Article = styled.article`
+  margin-top: 6rem;
   @media (max-width: 800px) {
     max-width: 100%;
     margin-left: 2rem;
@@ -97,22 +100,6 @@ const Article = styled.article`
   }
 `
 
-const Banner = styled.div`
-  background-color: #00a86b;
-  padding: 10px 0;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  margin-bottom: 20px;
-  z-index: 1;
-`
-
-const BannerHeading = styled.h1`
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
-`
-
 const CaseStudyPage = () => {
   const [stickyMenu, setStickyMenu] = useState(false)
 
@@ -123,40 +110,45 @@ const CaseStudyPage = () => {
     { id: "section-abstract", title: "Abstract", num: 1 },
     { id: "section-usage", title: "Using Jade", num: 2 },
     { id: "section-jamstack", title: "What is the JAMstack", num: 3 },
-    { id: "section-launch", title: "Launching a JAMstack web app", num: 4 },
+    { id: "section-launch", title: "Launching a JAMstack app", num: 4 },
     { id: "section-core", title: "Jade Core", num: 5 },
     { id: "section-evolution", title: "Evolution of Jade", num: 6 },
     { id: "section-future", title: "Future work", num: 7 },
     { id: "section-biblio", title: "Bibliography", num: 8 },
   ]
 
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <Waypoint
-        onEnter={handleWaypointEnter}
-        onLeave={handleWaypointLeave}
-      ></Waypoint>
-      <Banner className="banner case-study">
-        <BannerHeading>Jade Case Study</BannerHeading>
-      </Banner>
+  const team = { id: "section-team", title: "Our Team", num: 8 }
 
-      {stickyMenu && <ContentMenu sections={sections} />}
-      <Container>
-        <ArticleContainer>
-          <Article className="case-study">
-            <SectionAbstract {...sections[0]} />
-            <SectionUsage {...sections[1]} />
-            <SectionJamstack {...sections[2]} />
-            <SectionLaunch {...sections[3]} />
-            <SectionCore {...sections[4]} />
-            <SectionEvolution {...sections[5]} />
-            <SectionFuture {...sections[6]} />
-            <SectionBiblio {...sections[7]} />
-          </Article>
-        </ArticleContainer>
-      </Container>
-    </Layout>
+  return (
+    <>
+      <Layout>
+        <SEO title="Home" />
+        <Header siteTitle="Case Study" />
+        <Waypoint
+          onEnter={handleWaypointEnter}
+          onLeave={handleWaypointLeave}
+        ></Waypoint>
+
+        <Banner title="Case Study" sections={sections} team={team} />
+
+        {stickyMenu && <ContentMenu sections={sections} />}
+
+        <Container>
+          <ArticleContainer>
+            <Article className="case-study">
+              <SectionAbstract {...sections[0]} />
+              <SectionUsage {...sections[1]} />
+              <SectionJamstack {...sections[2]} />
+              <SectionLaunch {...sections[3]} />
+              <SectionCore {...sections[4]} />
+              <SectionEvolution {...sections[5]} />
+              <SectionFuture {...sections[6]} />
+              <SectionBiblio {...sections[7]} />
+            </Article>
+          </ArticleContainer>
+        </Container>
+      </Layout>
+    </>
   )
 }
 

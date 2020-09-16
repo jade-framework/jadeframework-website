@@ -43,7 +43,7 @@ const SectionCore = ({ num, title, id }) => {
       <h4>{num}.1.1 Overview of build stage architecture</h4>
       <p>Jade utilizes an AWS EC2 instance to handle the build process.</p>
       <Image imageName="svgs/42.svg" imageAlt="Provisioning Services" />
-      <p>The components or the EC2 instance include:</p>
+      <p>The components of the EC2 instance include:</p>
       <ul className="bullets">
         <li className="list-item">
           Configuration related to the user and the provisioned AWS services

@@ -1,10 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
-import Header from "./header"
 import "./styles/reset.css"
 import GlobalStyles from "./styles/global"
+
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 1rem 0;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,13 +26,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Deployed with
-        {` `}
+      <Footer>
+        <span>© {new Date().getFullYear()}, Deployed with </span>
+        &nbsp;
         <a href="https://jadeframework.dev">Jade</a>
-      </footer>
+      </Footer>
     </>
   )
 }
