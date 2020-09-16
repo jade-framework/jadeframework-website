@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Jade`,
+    title: `Jade Framework`,
     description: `A framework for deploying JAMstack applications.`,
     author: `Jade Framework`,
     image: "/jade_logo-type.png",

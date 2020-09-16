@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyles = createGlobalStyle`
   :root {
     --color-jade: #00a86b;
+    --color-contrast: #35495e;
     --color-persian-green: #00ac98;
     --color-puerto-rico: #4ac1b4;
     --color-buttercup: #f4a41d;
@@ -107,13 +108,13 @@ const GlobalStyles = createGlobalStyle`
 
   .slick-prev:before,
   .slick-next:before {
-    color: #00a86b;
+    color: var(--color-contrast);
   }
 
   p.slide-caption {
     width: 100%;
-    line-height: 10vw;
-    color: var(--color-claret);
+    line-height: 1rem;
+    color: var(--color-contrast);
     font-family: Arial, sans-serif;
     text-align: center;
     font-size: 0.8em;
@@ -230,7 +231,7 @@ const GlobalStyles = createGlobalStyle`
   pre {
     background: #f4f4f4;
     border: 1px solid #ddd;
-    border-left: 3px solid #35495e;
+    border-left: 3px solid var(--color-contrast);
     color: #666;
     page-break-inside: avoid;
     font-family: monospace;
