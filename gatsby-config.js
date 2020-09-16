@@ -3,7 +3,7 @@ module.exports = {
     title: `Jade Framework`,
     description: `A framework for deploying JAMstack applications.`,
     author: `Jade Framework`,
-    image: "/jade_logo-type.png",
+    image: "/jade_logo-full-square.png",
     siteUrl: `https://jadeframework.dev`,
   },
   plugins: [
