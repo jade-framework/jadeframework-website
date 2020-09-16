@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Image from "./image"
+import Image from "./image-logo"
 
 import styled from "styled-components"
 
@@ -13,18 +13,20 @@ const Banner = styled.header`
   justify-content: center;
 `
 
-const Heading = styled.h1`
-  font-size: 5rem;
-`
-
 const Subheading = styled.h2`
   text-align: center;
+  margin-top: 1rem;
+`
+
+const ImageContainer = styled.div`
+  width: 10rem;
 `
 
 const Header = ({ siteTitle }) => (
   <Banner>
-    <Heading>Jade</Heading>
-    <Image imageAlt="Jade logo" imageName="jade_logo-full.png" />
+    <ImageContainer>
+      <Image imageAlt="Jade logo" imageName="jade_logo-full.png" />
+    </ImageContainer>
     <Subheading>A deployment environment for JAMstack applications</Subheading>
   </Banner>
 )
