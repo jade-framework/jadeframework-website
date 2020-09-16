@@ -1,7 +1,6 @@
 import React from "react"
 
 import ContactIcons from "./contact-icons"
-import ImageJC from "./image-jc"
 import "./styles/team.css"
 
 const Team = props => {

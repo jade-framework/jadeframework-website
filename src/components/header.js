@@ -25,7 +25,6 @@ const Header = ({ siteTitle }) => (
   <Banner>
     <Heading>Jade</Heading>
     <Image imageAlt="Jade logo" imageName="jade_logo-full.png" />
-
     <Subheading>A deployment environment for JAMstack applications</Subheading>
   </Banner>
 )
