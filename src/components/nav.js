@@ -80,7 +80,10 @@ const Nav = ({ sections, team }) => {
         <List>
           <PageLink to="/">
             <ListItem button key={team.id}>
-              <ListItemText primary="Home" disableTypography={true} />
+              <ListItemText
+                primary="Back to our Case Study"
+                disableTypography={true}
+              />
             </ListItem>
           </PageLink>
         </List>
