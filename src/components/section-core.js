@@ -172,8 +172,8 @@ const SectionCore = ({ num, title, id }) => {
         are versioned by the SSG during the build process. Files are versioned
         by concatenating a sequence of characters with the developer’s original
         filename. This versioning is carried out with the exception of certain
-        files that are not meant to be cached, such as `index.html`, which is
-        updated to reference these versioned files.
+        files that are not meant to be cached, such as <code>index.html</code>,
+        which is updated to reference these versioned files.
       </p>
       <p>
         To overcome the invalidation problem, we considered sending
@@ -190,11 +190,12 @@ const SectionCore = ({ num, title, id }) => {
       <Image imageName="svgs/54.svg" imageAlt="Deploy Process 1" />
       <p>
         As seen in the code snippet, Jade invalidates only one file every time a
-        new build is detected: the `index.html` file. This is because
-        `index.html` references specific versions of files. CloudFront will
-        detect which files are needed based on `index.html` and pull these files
-        from S3 when a new version is uploaded, ensuring that the user is always
-        presented with the most recent version of the application.
+        new build is detected: the <code>index.html</code> file. This is because
+        <code>index.html</code> references specific versions of files.
+        CloudFront will detect which files are needed based on{" "}
+        <code>index.html</code> and pull these files from S3 when a new version
+        is uploaded, ensuring that the user is always presented with the most
+        recent version of the application.
       </p>
       <Image imageName="svgs/55.svg" imageAlt="Deploy Process 1" />
       <p>
