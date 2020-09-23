@@ -56,6 +56,15 @@ const Nav = ({ sections, team }) => {
               <ListItemText primary={team.title} disableTypography={true} />
             </ListItem>
           </PageLink>
+          <a
+            href="https://github.com/jade-framework/jade"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ListItem button key="github">
+              <ListItemText primary="Github" disableTypography={true} />
+            </ListItem>
+          </a>
           <Divider />
           <ListSubheader>Contents</ListSubheader>
           {sections.map((section, index) => (
